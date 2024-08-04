@@ -1,0 +1,314 @@
+@import "default";
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "normalize";
+@import "fonts";
+@import "swiper-bundle";
+@import "aos";
+$transition: 0.2s;
+:root{
+  scroll-behavior: smooth;
+}
+// GENERAL DOCUMENT STYLES
+* {
+  box-sizing: border-box;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  -webkit-user-select: none;
+  /* user-select -- это нестандартное свойство */
+
+  -moz-user-select: none;
+  /* поэтому нужны префиксы */
+
+  -ms-user-select: none;
+}
+html{
+  font-family: "AvenirNext-Regular", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 10px;
+}
+body{
+  background-color: #F4F2ED;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &.single-products{
+    background-color: #E4DACA;
+    main{
+      overflow: visible;
+      flex: none;
+    }
+  }
+  &.locked{
+    height: 100vh;
+    overflow: hidden;
+    @media all and (max-width: 500px){
+      height: auto;
+    }
+    &:before{
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+  &:before{
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    transition: 0.3s ease-in-out;
+  }
+  main{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+img{
+  max-width: 100%;
+}
+.padding-right{
+  padding-right: 157px;
+  @media all and (max-width: 1920px){
+    padding-right: px(157);
+  }
+  @media all and (max-width: 1600px){
+    padding-right: px(135);
+  }
+  @media all and (max-width: 1440px){
+    padding-right: px(125);
+  }
+  @media all and (max-width: 1280px){
+    padding-right: px(100);
+  }
+  @media all and (max-width: 1024px){
+    padding-right: px(75);
+  }
+  @media all and (max-width: 768px){
+    padding-right: px(50);
+  }
+  @media all and (max-width: 500px){
+    padding-right: px(20);
+  }
+}
+.padding-left{
+  padding-left: 157px;
+  @media all and (max-width: 1920px){
+    padding-left: px(157);
+  }
+  @media all and (max-width: 1600px){
+    padding-left: px(135);
+  }
+  @media all and (max-width: 1440px){
+    padding-left: px(125);
+  }
+  @media all and (max-width: 1280px){
+    padding-left: px(100);
+  }
+  @media all and (max-width: 1024px){
+    padding-left: px(75);
+  }
+  @media all and (max-width: 768px){
+    padding-left: px(50);
+  }
+  @media all and (max-width: 500px){
+    padding-left: px(20);
+  }
+}
+.main-container{
+  max-width: 1920px;
+  margin: auto;
+  width: 100%;
+  @extend .padding-left;
+  @extend .padding-right;
+}
+.section-title{
+  font-family: "AvenirNext-Bold", sans-serif;
+  font-size: 45px;
+  color: #00555C;
+  margin-bottom: 35px;
+  line-height: normal;
+  @media all and (max-width: 1920px){
+    font-size: px(45);
+    margin-bottom: px(35);
+  }
+  @media all and (max-width: 1600px){
+    font-size: px(38);
+    margin-bottom: px(35);
+  }
+  @media all and (max-width: 1440px){
+    font-size: px(36);
+    margin-bottom: px(32);
+  }
+  @media all and (max-width: 1200px){
+    font-size: px(34);
+    margin-bottom: px(29);
+  }
+  @media all and (max-width: 1024px){
+    font-size: px(32);
+    margin-bottom: px(26);
+  }
+  @media all and (max-width: 768px){
+    font-size: px(24);
+    margin-bottom: px(23);
+  }
+  @media all and (max-width: 500px){
+    font-size: px(20);
+    margin-bottom: px(10);
+  }
+}
+.section-subtitle{
+  font-size: 20px;
+  color: #00292C;
+  margin-bottom: 57px;
+  line-height: normal;
+  @media all and (max-width: 1920px){
+    font-size: px(20);
+    margin-bottom: px(57);
+  }
+  @media all and (max-width: 768px){
+    font-size: px(18);
+  }
+  @media all and (max-width: 500px){
+    font-size: px(16);
+  }
+}
+.button{
+  height: 70px;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 49px;
+  border: 2px solid #00555C;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  @media all and (max-width: 1920px){
+    height: px(70);
+    border-radius: px(100);
+    padding: px(28) px(49);
+  }
+  @media all and (max-width: 768px){
+    padding: px(10) px(20);
+    height: px(46);
+  }
+  span{
+    margin-right: 11px;
+    font-size: 20px;
+    font-family: "AvenirNext-Medium", sans-serif;
+    transition: 0.3s ease-in-out;
+    @media all and (max-width: 1920px){
+      font-size: px(20);
+      margin-right: px(11);
+    }
+    @media all and (max-width: 768px){
+      font-size: px(16);
+    }
+  }
+  svg{
+    path{
+      transition: 0.3s ease-in-out;
+    }
+  }
+  &-stroke{
+    background-color: transparent;
+    span{
+      color: #00555C;
+    }
+    svg{
+      path{
+        fill: #00555C;
+      }
+    }
+    &:hover{
+      background-color: #00555C;
+      span{
+        color: #FFFFFF;
+      }
+      svg{
+        path{
+          fill: #FFFFFF;
+        }
+      }
+    }
+  }
+}
+a{
+  color: #00555C;
+}
+.button{
+
+}
+.wpcf7-form{
+  input:focus {
+    background-color: lightblue;
+  }
+  label{
+    position: relative;
+  }
+  .wpcf7-not-valid{
+    border: 1px solid #E20000;
+  }
+  .wpcf7-not-valid-tip{
+    position: absolute;
+    background-color: #E20000;
+    color: white;
+    border-radius: 20px;
+    bottom: -8px;
+    top: auto!important;
+    left: 48px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    font-size: 14px;
+    @media all and (max-width: 1920px){
+      bottom: px(-8);
+      left: px(48);
+      height: px(22);
+      padding: 0 px(20);
+      font-size: px(14);
+    }
+  }
+}
+
+.wpcf7-response-output, .wpcf7-spinner{
+  display: none!important;
+}
+.to-right, .to-left, .to-up, .to-right-else, .to-left-else, .to-up-else,.to-right-else-two, .to-left-else-two, .to-up-else-two{
+  transition: 0.5s ease-in-out!important;
+}
+
+
+@import "templates/preloader";
+@import "templates/seo-block";
+@import "templates/header";
+@import "templates/banner";
+@import "templates/mirror";
+@import "templates/subscribe";
+@import "templates/market";
+@import "templates/about";
+@import "templates/title";
+@import "templates/products";
+@import "templates/contacts";
+@import "templates/variate";
+@import "templates/table";
+@import "templates/table-img";
+@import "templates/animate";
+@import "templates/404";
+@import "templates/main";
+@import "templates/footer";
+
