@@ -3,9 +3,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #FFFFFF;
+    background-color: transparent;
     padding: 23px 0;
-    box-shadow: 0px 4px 20px rgba(169, 190, 202, 0.3);
+    box-shadow: 0px 4px 20px rgba(169, 190, 202, 0);
+    transition: 0.3s ease-in-out;
+    z-index: 50;
     @media all and (max-width: 1920px){
         padding: px(23) 0;
     }
@@ -19,7 +21,8 @@
         flex: 1;
     }
     &.moved{
-        background-color: #203B49;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 20px rgba(169, 190, 202, 0.3);
         border-bottom: transparent;
         .desctop-logo{
             opacity: 0;

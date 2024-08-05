@@ -30,14 +30,14 @@ const styleFiles = [
 ]
 //Порядок подключения js файлов
 const scriptFiles = [
-   // './src/js/jquery-3.5.1.js',
+   './src/js/jquery-3.5.1.js',
    // './src/js/swiper-gl.esm.js',
    // './src/js/gl/gl.js',
    // './src/js/aos.js',
    // './src/js/slick.js',
    // './src/js/feedback.js',
    // './src/js/jquery.selectric.js',
-   './src/js/swiper-bundle.js',
+   // './src/js/swiper-bundle.js',
    // './src/client/js/jquery.mCustomScrollbar.js',
    // './src/js/fresco.min.js',
    './src/js/scripts.js'

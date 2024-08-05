@@ -17,6 +17,9 @@ get_header();
 	<main class="main">
         <?php
             get_template_part( 'template-parts/content', 'banner' );
+            get_template_part( 'template-parts/content', 'why' );
+            get_template_part( 'template-parts/content', 'need' );
+            get_template_part( 'template-parts/content', 'price' );
         ?>
 	</main>
 <?php

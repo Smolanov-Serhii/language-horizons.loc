@@ -34,9 +34,6 @@ html{
 }
 body{
   background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
   &.locked{
     height: 100vh;
     overflow: hidden;
@@ -61,12 +58,6 @@ body{
     pointer-events: none;
     z-index: 50;
     transition: 0.3s ease-in-out;
-  }
-  main{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
   }
 }
 img{
@@ -128,13 +119,13 @@ img{
   @extend .padding-right;
 }
 .section-title{
-  font-family: "AvenirNext-Bold", sans-serif;
-  font-size: 45px;
-  color: #00555C;
+  font-size: 48px;
+  color: #181717;
   margin-bottom: 35px;
+  font-weight: 700;
   line-height: normal;
   @media all and (max-width: 1920px){
-    font-size: px(45);
+    font-size: px(48);
     margin-bottom: px(35);
   }
   @media all and (max-width: 1600px){
@@ -161,21 +152,19 @@ img{
     font-size: px(20);
     margin-bottom: px(10);
   }
+  span{
+    color: #C4B39B;
+  }
 }
+
 .section-subtitle{
-  font-size: 20px;
-  color: #00292C;
-  margin-bottom: 57px;
+  font-size: 16px;
+  color: #181717;
+  margin-bottom: 10px;
   line-height: normal;
   @media all and (max-width: 1920px){
-    font-size: px(20);
-    margin-bottom: px(57);
-  }
-  @media all and (max-width: 768px){
-    font-size: px(18);
-  }
-  @media all and (max-width: 500px){
     font-size: px(16);
+    margin-bottom: px(10);
   }
 }
 .button{
@@ -247,10 +236,26 @@ img{
 .wpcf7-response-output, .wpcf7-spinner{
   display: none!important;
 }
+p{
+  color: #181717;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 47px;
+  @media all and (max-width: 1920px){
+    font-size: px(16);
+    line-height: px(24);
+    margin-bottom: px(47);
+  }
+}
 
 
 @import "templates/preloader";
 @import "templates/404";
 @import "templates/header";
 @import "templates/banner";
+@import "templates/why";
+@import "templates/need";
+@import "templates/price";
 

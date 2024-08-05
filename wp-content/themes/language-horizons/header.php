@@ -23,7 +23,7 @@
 
 <body>
 <?php wp_body_open(); ?>
-	<header class="header">
+	<header class="header default">
         <div class="header__container main-container">
             <div class="header__logo">
                 <a href="<?php ?>" rel="home" hreflang="">

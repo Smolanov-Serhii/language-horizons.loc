@@ -2,7 +2,7 @@
 $post_id = get_the_ID();
 ?>
 <section class="banner">
-    <div class="banner__container">
+    <div class="banner__container main-container">
         <div class="banner__text">
             <h1 class="banner__title"><?php the_field('zagolovok_v_baner', $post_id )?></h1>
             <div class="banner__desc">
