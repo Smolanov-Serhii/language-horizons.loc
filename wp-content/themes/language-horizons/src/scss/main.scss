@@ -25,7 +25,7 @@ $transition: 0.2s;
   -ms-user-select: none;
 }
 html{
-  font-family: "AvenirNext-Regular", sans-serif;
+  font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -33,17 +33,10 @@ html{
   font-size: 10px;
 }
 body{
-  background-color: #F4F2ED;
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  &.single-products{
-    background-color: #E4DACA;
-    main{
-      overflow: visible;
-      flex: none;
-    }
-  }
   &.locked{
     height: 100vh;
     overflow: hidden;
@@ -128,7 +121,7 @@ img{
   }
 }
 .main-container{
-  max-width: 1920px;
+  max-width: 1604px;
   margin: auto;
   width: 100%;
   @extend .padding-left;
@@ -186,70 +179,36 @@ img{
   }
 }
 .button{
-  height: 70px;
-  border-radius: 100px;
+  height: 55px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 28px 49px;
-  border: 2px solid #00555C;
+  border-radius: 48px;
+  background: #CA85D5;
   text-decoration: none;
   transition: 0.3s ease-in-out;
+  min-width: 270px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.6);
   @media all and (max-width: 1920px){
-    height: px(70);
-    border-radius: px(100);
-    padding: px(28) px(49);
-  }
-  @media all and (max-width: 768px){
-    padding: px(10) px(20);
-    height: px(46);
+    min-width: px(270);
+    height: px(55);
+    border-radius: px(48);
   }
   span{
-    margin-right: 11px;
-    font-size: 20px;
-    font-family: "AvenirNext-Medium", sans-serif;
-    transition: 0.3s ease-in-out;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
     @media all and (max-width: 1920px){
-      font-size: px(20);
-      margin-right: px(11);
-    }
-    @media all and (max-width: 768px){
       font-size: px(16);
     }
   }
-  svg{
-    path{
-      transition: 0.3s ease-in-out;
-    }
+  &:hover{
+    background: #D291DE;
+    box-shadow: 0px 4px 24px 0px rgba(186, 104, 200, 0.62);
   }
-  &-stroke{
-    background-color: transparent;
-    span{
-      color: #00555C;
-    }
-    svg{
-      path{
-        fill: #00555C;
-      }
-    }
-    &:hover{
-      background-color: #00555C;
-      span{
-        color: #FFFFFF;
-      }
-      svg{
-        path{
-          fill: #FFFFFF;
-        }
-      }
-    }
-  }
-}
-a{
-  color: #00555C;
-}
-.button{
-
 }
 .wpcf7-form{
   input:focus {
@@ -288,27 +247,10 @@ a{
 .wpcf7-response-output, .wpcf7-spinner{
   display: none!important;
 }
-.to-right, .to-left, .to-up, .to-right-else, .to-left-else, .to-up-else,.to-right-else-two, .to-left-else-two, .to-up-else-two{
-  transition: 0.5s ease-in-out!important;
-}
 
 
 @import "templates/preloader";
-@import "templates/seo-block";
+@import "templates/404";
 @import "templates/header";
 @import "templates/banner";
-@import "templates/mirror";
-@import "templates/subscribe";
-@import "templates/market";
-@import "templates/about";
-@import "templates/title";
-@import "templates/products";
-@import "templates/contacts";
-@import "templates/variate";
-@import "templates/table";
-@import "templates/table-img";
-@import "templates/animate";
-@import "templates/404";
-@import "templates/main";
-@import "templates/footer";
 
