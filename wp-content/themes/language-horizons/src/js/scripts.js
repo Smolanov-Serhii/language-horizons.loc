@@ -60,6 +60,55 @@ $(document).ready(function () {
             $('body').removeClass('locked');
         }
     })
+    function RevSlider(){
+        var MarketSlider = new Swiper(".reviews .swiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: '.reviews .swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+            breakpoints: {
+                '320': {
+                    slidesPerView: 1.5,
+                    spaceBetween: 10,
+                },
+                '500': {
+                    slidesPerView: 2,
+                    spaceBetween: 10,
+                },
+                '768': {
+                    slidesPerView: 2.5,
+                    spaceBetween: 10,
+                },
+                '1024': {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                },
+            },
+        });
+    }
+    if ($('.reviews').length) {
+        RevSlider();
+    }
+
+    function FaqClick(){
+        if($('.faq').length){
+            $(".faq__item-title, .faq__item svg").click(function() {
+                if ($(this).closest('.faq__item').hasClass('active')){
+                    $(this).closest('.faq__item').removeClass("active");
+                    $(this).closest('.faq').find('.faq__item-desc').fadeOut(300);
+                } else {
+                    $(this).closest('.faq').find('.faq__item').removeClass("active");
+                    $(this).closest('.faq').find('.faq__item-desc').fadeOut(300);
+                    $(this).closest('.faq__item').find('.faq__item-desc').fadeIn(300);
+                    $(this).closest('.faq__item').addClass("active");
+                }
+            });
+        }
+    }
+    FaqClick();
 
 });
 

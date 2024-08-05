@@ -1,7 +1,7 @@
 <?php
 $post_id = get_the_ID();
 ?>
-<section class="need">
+<section class="need" id="need">
     <div class="need__container main-container">
         <div class="need__img">
             <img src="<?php echo the_field('kartinka_bloka_tebe_podojdyot', $post_id) ?>" alt="<?php the_field('zagolovok_tebe_podojdyot', $post_id )?>">

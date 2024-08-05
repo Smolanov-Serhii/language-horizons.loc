@@ -1,0 +1,89 @@
+.contacts{
+  margin: 120px 0;
+  @media all and (max-width: 1920px){
+    margin: px(120) 0;
+  }
+  &__title{
+    margin-bottom: 20px;
+    @media all and (max-width: 1920px){
+      margin-bottom: px(20);
+    }
+  }
+  &__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__text{
+    width: calc(50% - 150px);
+    @media all and (max-width: 1920px){
+      width: calc(50% - px(150));
+    }
+  }
+  &__desc{
+    p{
+      margin-bottom: 29px;
+      @media all and (max-width: 1920px){
+        margin-bottom: px(29);
+      }
+    }
+  }
+  &__img{
+    width: 50%;
+  }
+  form{
+    button{
+      border: none;
+    }
+    > div{
+      position: relative;
+      margin-bottom: 20px;
+      @media all and (max-width: 1920px){
+        margin-bottom: px(20);
+      }
+      br{
+        display: none;
+      }
+      svg{
+        height: 24px;
+        width: auto;
+        position: absolute;
+        left: 20px;
+        top: calc(50% - 12px);
+        z-index: 2;
+        @media all and (max-width: 1920px){
+          height: px(24);
+          left: px(20);
+          top: calc(50% - px(12));
+        }
+      }
+      input{
+        border-radius: 15px;
+        border: 1px #C4B39B;
+        background: #FAF9F7;
+        padding: 22px 22px 22px 60px;
+        color: #181717;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        width: 100%;
+        @media all and (max-width: 1920px){
+          border-radius: px(15);
+          padding: px(22) px(22) px(22) px(60);
+          font-size: px(14);
+        }
+        &::placeholder{
+          color: rgba(24, 23, 23, 0.25);
+        }
+      }
+      p{
+        margin-bottom: 0;
+        span{
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}

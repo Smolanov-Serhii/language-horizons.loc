@@ -1,7 +1,7 @@
 <?php
 $post_id = get_the_ID();
 ?>
-<section class="price">
+<section class="price" id="price">
     <div class="price__container main-container">
         <h2 class="price__title section-title"><?php the_field('zagolovok_bloka_czeny', $post_id )?></h2>
         <?php

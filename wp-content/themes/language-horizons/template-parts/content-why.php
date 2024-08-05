@@ -1,7 +1,7 @@
 <?php
 $post_id = get_the_ID();
 ?>
-<section class="why">
+<section class="why" id="courses">
     <div class="why__container main-container">
         <div class="why__subtitle section-subtitle"><?php the_field('nadzagolovok_bloka_pochemu_my', $post_id )?></div>
         <h2 class="why__title section-title"><?php the_field('zagolovok_bloka_pochemu_my', $post_id )?></h2>
