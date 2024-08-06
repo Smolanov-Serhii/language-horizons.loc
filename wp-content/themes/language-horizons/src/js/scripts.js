@@ -109,5 +109,38 @@ $(document).ready(function () {
     }
     FaqClick();
 
+    function PopupInit(){
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+            $('.popup').fadeOut(300);
+            $('#success-send').fadeIn(300);
+            $('.wpcf7-response-output').empty();
+            setTimeout(function (){
+                $('#success-send').fadeOut(300);
+                $('body').removeClass('locked');
+            }, 2000);
+        }, false );
+        $(".js-form").click(function () {
+            $('body').addClass('locked');
+            $('.popup').fadeIn(300);
+        });
+        $(".popup__close").click(function () {
+            $('body').removeClass('locked');
+            $(this).closest('.popup').fadeOut(300);
+        });
+
+        const div = document.querySelector( '.header');
+
+        document.addEventListener( 'click', (e) => {
+            const withinBoundaries = e.composedPath().includes(div);
+
+            if ( ! withinBoundaries ) {
+                $('.js-burger').removeClass('active');
+                $('.header').removeClass('clicked');
+                $('.header__mobile').fadeOut(300);
+            }
+        })
+    }
+    PopupInit();
+
 });
 

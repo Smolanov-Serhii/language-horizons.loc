@@ -1,0 +1,130 @@
+.popup, .success-send{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999999;
+  margin-top: 0;
+  form{
+    > div{
+      @media all and (max-width: 500px){
+        margin-bottom: px(10);
+        input{
+          padding-top: px(16);
+          padding-bottom: px(16);
+        }
+      }
+    }
+    > p {
+      margin-bottom: 0;
+    }
+    .cf7sr-g-recaptcha{
+      position: relative;
+      margin-top: 20px;
+    }
+  }
+  .contacts__container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .contacts__desc{
+      p{
+        @media all and (max-width: 44px){
+          margin-bottom: px(20);
+        }
+      }
+    }
+    .contacts__title{
+      width: 100%;
+      @media all and (max-width: 768px){
+        text-align: center;
+      }
+    }
+    .wpcf7{
+      width: 100%;
+    }
+  }
+  &__container{
+    max-width: 1237px;
+    width: 100%;
+    background: var(--ffffff, #FFF);
+    box-shadow: 0px 0px 81.6px 0px rgba(23, 42, 52, 0.20);
+    padding: 53px 88px;
+    position: relative;
+    flex-direction: row-reverse;
+    @media all and (max-width: 1920px){
+      max-width: px(1237);
+      padding: px(53) px(88);
+    }
+    @media all and (max-width: 768px){
+      max-width: calc(100vw - px(40));
+      padding: px(40);
+    }
+    @media all and (max-width: 500px){
+      padding: px(20);
+    }
+    > img{
+      width: 50%;
+      @media all and (max-width: 768px){
+        margin: auto;
+        max-width: 400px;
+        width: 80%;
+        margin-bottom: px(40);
+      }
+      @media all and (max-width: 440px){
+        margin-bottom: px(20);
+      }
+    }
+  }
+  &__close{
+    position: absolute;
+    top: px(20);
+    right: px(20);
+    cursor: pointer;
+  }
+  &__title{
+    color: #CBB687;
+    font-size: px(48);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    margin-bottom: px(7);
+    @media all and (max-width: 768px){
+      font-size: px(40);
+    }
+  }
+  &__subtitle{
+    color: #151413;
+    font-size: px(20);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 149%;
+    margin-bottom: px(38);
+    @media all and (max-width: 768px){
+      font-size: px(16);
+    }
+  }
+  .button{
+    min-width: px(313);
+    @media all and (max-width: 768px){
+      min-width: auto;
+      width: 100%;
+    }
+  }
+}
+.success-send{
+  .popup__container{
+    max-width: none;
+    width: auto;
+    padding: px(40);
+  }
+  .popup__subtitle{
+    margin-bottom: 0;
+  }
+}

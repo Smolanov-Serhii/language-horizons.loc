@@ -26,7 +26,7 @@ $post_id = get_the_ID();
                         <?php echo $price;?>
                     </div>
                     <div class="price__item-btn">
-                        <div class="button">
+                        <div class="button js-form">
                             <span><?php echo $btn;?></span>
                         </div>
                     </div>

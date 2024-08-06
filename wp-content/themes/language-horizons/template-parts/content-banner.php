@@ -9,7 +9,7 @@ $post_id = get_the_ID();
                 <?php the_field('opisanie_v_baner', $post_id )?>
             </div>
             <div class="banner__btn">
-                <div class="button">
+                <div class="button js-form">
                     <span><?php the_field('nadpis_na_knopke', $post_id )?></span>
                 </div>
             </div>
