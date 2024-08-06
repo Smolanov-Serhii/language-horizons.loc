@@ -142,5 +142,17 @@ $(document).ready(function () {
     }
     PopupInit();
 
+    $(".header__nav a").on("click", function(e){
+        e.preventDefault();
+
+        var anchor = $(this).attr('href');
+        $('html, body').stop().animate({
+            scrollTop: $(anchor).offset().top - 100
+        }, 0);
+        $('.header__wrapper').removeClass('active');
+        $('.header').removeClass('burger');
+        $('body').removeClass('locked');
+    });
+
 });
 

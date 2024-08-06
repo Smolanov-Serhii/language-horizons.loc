@@ -30,7 +30,7 @@ const styleFiles = [
 ]
 //Порядок подключения js файлов
 const scriptFiles = [
-   './src/js/jquery-3.5.1.js',
+   './src/js/jquery-3.7.1.js',
    // './src/js/swiper-gl.esm.js',
    // './src/js/gl/gl.js',
    // './src/js/aos.js',

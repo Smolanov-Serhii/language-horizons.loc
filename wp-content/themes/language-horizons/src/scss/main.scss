@@ -35,10 +35,10 @@ html{
 body{
   background-color: #FFFFFF;
   &.locked{
-    height: 100vh;
-    overflow: hidden;
+    //height: 100vh;
+    //overflow: hidden;
     @media all and (max-width: 500px){
-      height: auto;
+      //height: auto;
     }
     &:before{
       pointer-events: all;
