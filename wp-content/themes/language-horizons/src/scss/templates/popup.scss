@@ -10,6 +10,16 @@
   justify-content: center;
   z-index: 999999999;
   margin-top: 0;
+  border-radius: 20px;
+  @media all and (max-width: 1920px){
+    border-radius: px(20);
+  }
+  @media all and (max-width: 1024px){
+    border-radius: px(14);
+  }
+  @media all and (max-width: 768px){
+    border-radius: px(10s);
+  }
   form{
     > div{
       @media all and (max-width: 500px){

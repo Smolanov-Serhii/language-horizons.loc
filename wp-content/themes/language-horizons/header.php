@@ -20,8 +20,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 	<?php wp_head(); ?>
 </head>
+<script>
+    window.onload = function () {
+        document.body.classList.add('loaded_hiding');
+        window.setTimeout(function () {
+            document.body.classList.add('loaded');
+            document.body.classList.remove('loaded_hiding');
+            if ($('.wpcf7-numbers-only').length > 0) {
+                $(".wpcf7-numbers-only").on("input", function() {
+                    var value = $(this).val();
+                    var pos = value.indexOf('+');
+                    this.value = this.value.replace(/[^0-9+]/g, '');
+                    if(pos === 0) return;
+                    else if(pos < 0) $(this).val('+' + value);
+                    else $(this).val(value.substr(pos));
+                });
+            }
+        }, 500);
 
+    }
+</script>
 <body>
+<div class="preloader">
+    <div class="preloader__row">
+        <div class="preloader__item"></div>
+        <div class="preloader__item"></div>
+    </div>
+</div>
 <?php wp_body_open(); ?>
 	<header class="header default">
         <div class="header__container main-container">
