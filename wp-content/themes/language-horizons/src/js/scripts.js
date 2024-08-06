@@ -40,10 +40,9 @@ $(document).ready(function () {
     };
 
     $(".header__burger").click(function () {
-        console.log('clisk')
         $('.header').toggleClass('burger');
         $('.header__wrapper').toggleClass('active');
-        $('body').addClass('locked');
+        $('body').toggleClass('locked');
     });
     $(".header__close").click(function () {
         $('.header__wrapper').removeClass('active');
@@ -71,7 +70,7 @@ $(document).ready(function () {
             loop: true,
             breakpoints: {
                 '320': {
-                    slidesPerView: 1.5,
+                    slidesPerView: 1,
                     spaceBetween: 10,
                 },
                 '500': {
@@ -79,7 +78,7 @@ $(document).ready(function () {
                     spaceBetween: 10,
                 },
                 '768': {
-                    slidesPerView: 2.5,
+                    slidesPerView: 2,
                     spaceBetween: 10,
                 },
                 '1024': {

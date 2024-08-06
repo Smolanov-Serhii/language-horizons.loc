@@ -3,24 +3,42 @@
   @media all and (max-width: 1920px){
     margin: px(120) 0;
   }
+  @media all and (max-width: 768px){
+    margin: px(80) 0;
+  }
+  @media all and (max-width: 500px){
+    margin: px(40) 0 0 0;
+  }
   &__title{
     margin-bottom: 20px;
     @media all and (max-width: 1920px){
       margin-bottom: px(20);
+    }
+    @media all and (max-width: 768px){
+      text-align: center;
     }
   }
   &__container{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media all and (max-width: 768px){
+      flex-wrap: wrap;
+    }
   }
   &__text{
     width: calc(50% - 150px);
     @media all and (max-width: 1920px){
       width: calc(50% - px(150));
     }
+    @media all and (max-width: 768px){
+      width: 100%;
+    }
   }
   &__desc{
+    @media all and (max-width: 768px){
+      text-align: center;
+    }
     p{
       margin-bottom: 29px;
       @media all and (max-width: 1920px){
@@ -30,8 +48,22 @@
   }
   &__img{
     width: 50%;
+    @media all and (max-width: 768px){
+      width: 100%;
+      text-align: center;
+      margin-bottom: px(40);
+      img{
+        max-width: 400px;
+        width: 100%;
+      }
+    }
   }
   form{
+    > p{
+      @media all and (max-width: 768px){
+        text-align: center;
+      }
+    }
     button{
       border: none;
     }

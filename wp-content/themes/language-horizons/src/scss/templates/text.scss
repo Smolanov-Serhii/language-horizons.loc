@@ -3,8 +3,14 @@
   @media all and (max-width: 1920px){
     margin: px(80) 0 px(90) 0;
   }
+  @media all and (max-width: 1024px){
+    margin: px(40) 0;
+  }
   &__title{
     text-align: center;
+    @media all and (max-width: 768px){
+      margin-bottom: px(40);
+    }
   }
   &__container{
     ol, ul{
@@ -19,7 +25,13 @@
         font-size: px(16);
         padding-left: px(20);
       }
+      @media all and (max-width: 768px){
+        font-size: px(14);
+      }
       li{
+        @media all and (max-width: 768px){
+          margin-bottom: px(10);
+        }
         &::marker{
           font-weight: 700;
           font-size: 16px;
@@ -34,6 +46,9 @@
     }
     p{
       margin-bottom: 1em;
+      @media all and (max-width: 768px){
+        text-align: center;
+      }
     }
   }
 }

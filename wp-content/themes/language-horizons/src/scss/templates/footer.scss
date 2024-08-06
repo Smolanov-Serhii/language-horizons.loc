@@ -7,16 +7,26 @@
   &__container{
     display: flex;
     align-items: center;
+    @media all and (max-width: 1024px){
+      flex-direction: column;
+    }
   }
   &__wrapper{
     display: flex;
     align-items: center;
     flex: 1;
+    @media all and (max-width: 1024px){
+      flex-direction: column;
+      flex: none;
+    }
   }
   &__logo{
     width: 192px;
     @media all and (max-width: 1920px){
       width: px(192);
+    }
+    @media all and (max-width: 1024px){
+      display: none;
     }
     img{
       width: 100%;
@@ -28,10 +38,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @media all and (max-width: 1024px){
+      margin-bottom: px(40);
+    }
     .menu{
       display: flex;
       align-items: center;
       justify-content: center;
+      @media all and (max-width: 768px){
+        flex-direction: column;
+      }
       li{
         margin: 0 43px;
         @media all and (max-width: 1920px){
@@ -39,6 +55,9 @@
         }
         @media all and (max-width: 1199px){
           margin: 0 px(20);
+        }
+        @media all and (max-width: 768px){
+          margin: px(10) 0 ;
         }
         a{
           color: #181717;
@@ -66,6 +85,9 @@
     @media all and (max-width: 1920px){
       margin-right: px(43);
     }
+    @media all and (max-width: 1024px){
+      margin-right: 0;
+    }
     a{
       color: #181717;
       font-size: 20px;
@@ -89,6 +111,9 @@
     @media all and (max-width: 1920px){
       margin-top: px(60);
       font-size: px(12);
+    }
+    @media all and (max-width: 1024px){
+      text-align: center;
     }
   }
 }

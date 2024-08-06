@@ -4,6 +4,9 @@
   @media all and (max-width: 1920px){
     padding: px(180) 0 px(87) 0;
   }
+  @media all and (max-width: 1024px){
+    padding: px(40) 0;
+  }
   &__container{
     display: flex;
     flex-wrap: wrap;
@@ -18,11 +21,34 @@
     @media all and (max-width: 1199px){
       width: 50%;
     }
+    @media all and (max-width: 768px){
+      width: 100%;
+      text-align: center;
+      img{
+        max-width: 400px;
+        width: 100%;
+      }
+    }
   }
   &__text{
     width: calc(100% - 760px);
     @media all and (max-width: 1199px){
       width: 50%;
+    }
+    @media all and (max-width: 768px){
+      width: 100%;
+    }
+  }
+  &__subtitle{
+    @media all and (max-width: 768px){
+      text-align: center;
+      margin-top: px(40);
+    }
+  }
+  &__title{
+    @media all and (max-width: 768px){
+      text-align: center;
+      margin-bottom: px(40);
     }
   }
   &__list{
@@ -34,6 +60,12 @@
     margin-bottom: 35px;
     @media all and (max-width: 1920px){
       margin-bottom: px(35);
+    }
+    @media all and (max-width: 768px){
+      align-items: flex-start;
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
     svg{
       width: 20px;

@@ -6,6 +6,10 @@
     margin: px(80) 0 px(90) 0;
     padding: px(85) 0 px(60) 0;
   }
+  @media all and (max-width: 768px){
+    margin: px(40) 0;
+    padding: px(40) 0;
+  }
   &__subtitle{
     text-align: center;
     margin-bottom: 10px;
@@ -15,6 +19,9 @@
   }
   &__title{
     text-align: center;
+    @media all and (max-width: 768px){
+      margin-bottom: px(40);
+    }
   }
   &__item{
     text-align: center;

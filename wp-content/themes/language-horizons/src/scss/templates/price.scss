@@ -1,5 +1,8 @@
 .price{
   margin: 90px 0;
+  @media all and (max-width: 1024px){
+    margin: px(40) 0;
+  }
   &__container{
 
   }
@@ -8,6 +11,9 @@
     margin-bottom: 65px;
     @media all and (max-width: 1920px){
       margin-bottom: px(65);
+    }
+    @media all and (max-width: 768px){
+      margin-bottom: px(40);
     }
   }
   &__list{
@@ -33,6 +39,11 @@
       width: calc(50% - px(10));
       margin-bottom: px(20);
     }
+    @media all and (max-width: 567px){
+      width: 100%;
+      margin-bottom: px(10);
+      padding: px(20);
+    }
     img{
       height: 32px;
       width: auto;
@@ -51,6 +62,9 @@
       @media all and (max-width: 1920px){
         margin-bottom: px(41);
       }
+      @media all and (max-width: 768px){
+        margin-bottom: px(20);
+      }
       p{
         margin-bottom: 0;
       }
@@ -65,6 +79,10 @@
       @media all and (max-width: 1920px){
         font-size: px(36);
         margin-bottom: px(40);
+      }
+      @media all and (max-width: 768px){
+        font-size: px(24);
+        margin-bottom: px(20);
       }
     }
   }

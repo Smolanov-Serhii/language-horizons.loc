@@ -11,31 +11,76 @@
     @media all and (max-width: 1920px){
         padding: px(23) 0;
     }
+    @media all and (max-width: 1024px){
+        padding: px(14) 0;
+        height: px(70);
+    }
     &__container{
         display: flex;
         align-items: center;
+        @media all and (max-width: 1024px){
+            justify-content: space-between;
+        }
     }
     &__wrapper{
         display: flex;
         align-items: center;
         flex: 1;
+        @media all and (max-width: 1024px){
+            transition: all 0.3s ease;
+            transform: translateX(120%);
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: px(320);
+            background-color: #FFFFFF;
+            flex-direction: column;
+            justify-content: center;
+            padding-bottom: px(60);
+            &.active{
+                transform: translateX(0);
+            }
+        }
+        @media all and (max-width: 500px){
+            width: 100%;
+        }
     }
     &__logo{
         width: 192px;
         @media all and (max-width: 1920px){
             width: px(192);
         }
+        @media all and (max-width: 1024px){
+            width: px(150);
+        }
         img{
             width: 100%;
             height: auto;
         }
     }
-    &.moved{
+    &.moved, &.burger{
         background-color: #FFFFFF;
         box-shadow: 0px 4px 20px rgba(169, 190, 202, 0.3);
         border-bottom: transparent;
         @media all and (max-width: 1200px){
             border-bottom: 1px solid rgba(203, 182, 135, 0.50);
+        }
+    }
+    &__close{
+        display: none;
+        @media all and (max-width: 1024px){
+            display: block;
+            position: absolute;
+            right: px(20);
+            top: px(20);
+            cursor: pointer;
+            height: px(40);
+            width: px(40);
+            svg{
+                height: 100%;
+                width: 100%;
+            }
         }
     }
     &__burger{
@@ -44,20 +89,13 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        padding-right: px(55);
-        @media all and (max-width: 768px){
-            padding-right: px(35);
-        }
-        @media all and (max-width: 500px){
-            padding-right: px(20);
-        }
         span{
             display: block;
             height: 2px;
             width: px(60);
             background-color: #000000;
             margin: px(10) 0;
-            @media all and (max-width: 768px){
+            @media all and (max-width: 1024px){
                 width: px(40);
                 margin: px(6);
             }
@@ -75,10 +113,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        @media all and (max-width: 1024px){
+            position: relative;
+            width: 100%;
+        }
         .menu{
             display: flex;
             align-items: center;
             justify-content: center;
+            @media all and (max-width: 1024px){
+                flex-direction: column;
+                margin-bottom: px(40);
+            }
             li{
                 margin: 0 43px;
                 @media all and (max-width: 1920px){
@@ -86,6 +132,9 @@
                 }
                 @media all and (max-width: 1199px){
                     margin: 0 px(20);
+                }
+                @media all and (max-width: 1024px){
+                    margin: px(20) 0;
                 }
                 a{
                     color: #181717;
@@ -102,6 +151,9 @@
                     @media all and (max-width: 1199px){
                         font-size: px(16);
                     }
+                    @media all and (max-width: 1024px){
+                        font-size: px(20);
+                    }
                 }
             }
         }
@@ -112,6 +164,10 @@
         margin-right: 43px;
         @media all and (max-width: 1920px){
             margin-right: px(43);
+        }
+        @media all and (max-width: 1024px){
+            margin-right: 0;
+            margin-bottom: px(40);
         }
         a{
             color: #181717;
@@ -132,12 +188,9 @@
     &__lang {
         display: flex;
         height: 100%;
-        @media all and (max-width: 1024px) {
+        @media all and (max-width: 1024px){
             height: auto;
-            border-right: none;
-            padding: px(34) 0 px(84) 0;
         }
-
         ul {
             height: 100%;
             display: flex;
