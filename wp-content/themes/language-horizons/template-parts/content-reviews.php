@@ -21,7 +21,13 @@ $post_id = get_the_ID();
                         <p><?php echo $desc;?></p>
                     </div>
                     <div class="reviews__item-img">
-                        <img src="<?php echo $img;?>" alt="<?php echo $name;?>">
+                        <?php
+                            if ($img){
+                                ?>
+                                    <img src="<?php echo $img;?>" alt="<?php echo $name;?>">
+                                <?php
+                            }
+                        ?>
                     </div>
                     <p class="reviews__item-name">
                         <?php echo $name;?>

@@ -57,9 +57,9 @@
   &__item{
     display: flex;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 26px;
     @media all and (max-width: 1920px){
-      margin-bottom: px(35);
+      margin-bottom: px(26);
     }
     @media all and (max-width: 768px){
       align-items: flex-start;
