@@ -7,6 +7,9 @@
   @media all and (max-width: 1920px){
     min-height: px(900);
   }
+  @media all and (max-width: 1199px){
+    min-height: px(700);
+  }
   &__container{
     display: flex;
     align-items: center;

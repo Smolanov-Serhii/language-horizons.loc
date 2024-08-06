@@ -20,16 +20,20 @@
         align-items: center;
         flex: 1;
     }
+    &__logo{
+        width: 192px;
+        @media all and (max-width: 1920px){
+            width: px(192);
+        }
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
     &.moved{
         background-color: #FFFFFF;
         box-shadow: 0px 4px 20px rgba(169, 190, 202, 0.3);
         border-bottom: transparent;
-        .desctop-logo{
-            opacity: 0;
-        }
-        .moved-logo{
-            opacity: 1;
-        }
         @media all and (max-width: 1200px){
             border-bottom: 1px solid rgba(203, 182, 135, 0.50);
         }
@@ -62,7 +66,7 @@
                 margin: px(4);
             }
         }
-        @media all and (max-width: 1200px){
+        @media all and (max-width: 1024px){
             display: flex;
         }
     }
@@ -80,6 +84,9 @@
                 @media all and (max-width: 1920px){
                     margin: 0 px(43);
                 }
+                @media all and (max-width: 1199px){
+                    margin: 0 px(20);
+                }
                 a{
                     color: #181717;
                     font-variant-numeric: lining-nums proportional-nums;
@@ -91,6 +98,9 @@
                     text-decoration: none;
                     @media all and (max-width: 1920px){
                         font-size: px(18);
+                    }
+                    @media all and (max-width: 1199px){
+                        font-size: px(16);
                     }
                 }
             }
@@ -114,12 +124,15 @@
                 font-size: px(20);
                 margin: 0 px(21);
             }
+            @media all and (max-width: 1199px){
+                font-size: px(16);
+            }
         }
     }
     &__lang {
         display: flex;
         height: 100%;
-        @media all and (max-width: 1200px) {
+        @media all and (max-width: 1024px) {
             height: auto;
             border-right: none;
             padding: px(34) 0 px(84) 0;
@@ -158,6 +171,9 @@
                 white-space: nowrap;
                 transition: all 0.3s ease-in-out;
                 text-decoration: none;
+                @media all and (max-width: 1199px){
+                    font-size: px(14);
+                }
                 &:hover {
                     color: #D291DE;
                 }

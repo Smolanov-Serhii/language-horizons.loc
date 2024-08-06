@@ -15,11 +15,14 @@
     @media all and (max-width: 1920px){
       width: px(740);
     }
+    @media all and (max-width: 1199px){
+      width: 50%;
+    }
   }
   &__text{
     width: calc(100% - 760px);
-    @media all and (max-width: 1920px){
-      width: calc(100% - px(760));
+    @media all and (max-width: 1199px){
+      width: 50%;
     }
   }
   &__list{

@@ -13,6 +13,9 @@
     @media all and (max-width: 1920px){
       width: px(1070);
     }
+    @media all and (max-width: 1199px){
+      width: 100%;
+    }
   }
   &__title{
     text-align: center;

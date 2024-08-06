@@ -13,6 +13,16 @@
     align-items: center;
     flex: 1;
   }
+  &__logo{
+    width: 192px;
+    @media all and (max-width: 1920px){
+      width: px(192);
+    }
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
   &__nav{
     flex: 1;
     display: flex;
@@ -27,6 +37,9 @@
         @media all and (max-width: 1920px){
           margin: 0 px(43);
         }
+        @media all and (max-width: 1199px){
+          margin: 0 px(20);
+        }
         a{
           color: #181717;
           font-variant-numeric: lining-nums proportional-nums;
@@ -38,6 +51,9 @@
           text-decoration: none;
           @media all and (max-width: 1920px){
             font-size: px(18);
+          }
+          @media all and (max-width: 1199px){
+            font-size: px(16);
           }
         }
       }
@@ -60,6 +76,9 @@
       @media all and (max-width: 1920px){
         font-size: px(20);
         margin: 0 px(21);
+      }
+      @media all and (max-width: 1199px){
+        font-size: px(16);
       }
     }
   }

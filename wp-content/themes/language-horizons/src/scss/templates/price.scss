@@ -29,6 +29,10 @@
       border-radius: px(20);
       padding: px(37) px(27);
     }
+    @media all and (max-width: 1199px){
+      width: calc(50% - px(10));
+      margin-bottom: px(20);
+    }
     img{
       height: 32px;
       width: auto;
