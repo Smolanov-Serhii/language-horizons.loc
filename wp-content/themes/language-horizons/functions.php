@@ -176,3 +176,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
     require get_template_directory() . '/inc/jetpack.php';
 }
 
+function add_qts_sitemaps_to_robots( $output, $public ) {
+    global $wp_sitemaps, $q_config;
+    // bail early if either $wp_sitemaps or $q_config are not set, or the site is not public
+    if( !isset($wp_sitemaps) || !isset($q_config) || !$public ) return $output;
+    // get the default sitemap.xml url
+    $index_url = $wp_sitemaps->index->get_index_url();
+    // get all languages
+    $languages = qtranxf_getSortedLanguages();
+    // get default language
+    $default_language = qtranxf_getLanguageDefault();
+    foreach( $languages as $lang ) {
+        // bail early if the current language is the default, since this is
+        // being taken care of by WordPress core
+        if( $lang === $default_language ) continue;
+        $output .= "\nSitemap: " . esc_url( qtranxf_convertUrl($index_url, $lang) ) . "\n";
+    }
+
+    return $output;
+}
+add_filter( 'robots_txt', 'add_qts_sitemaps_to_robots', 2, 2 );
