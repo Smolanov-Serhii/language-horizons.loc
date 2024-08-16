@@ -118,6 +118,8 @@ $(document).ready(function () {
                 $('#success-send').fadeOut(300);
                 $('body').removeClass('locked');
             }, 2000);
+            gtag('event', 'conversion', { 'send_to': 'AW-494767027/plX3CJq35PsBELOX9usB', 'value': 1.0, 'currency': 'USD' });
+
         }, false );
         $(".js-form").click(function () {
             $('body').addClass('locked');
