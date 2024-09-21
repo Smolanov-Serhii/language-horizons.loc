@@ -3,7 +3,7 @@ $post_id = get_the_ID();
 ?>
 <section class="news">
     <div class="news__container main-container">
-        <h2 class="news__title section-title"><?php the_field('zagolovok_bloka_novosti', $post_id )?></h2>
+        <h2 class="news__title section-title"><?php the_field('zagolovok_bloka_novosti', 204 )?></h2>
         <div class="news__swiper swiper">
             <div class="news__wrapper  swiper-wrapper">
                 <?php

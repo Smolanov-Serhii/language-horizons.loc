@@ -198,4 +198,7 @@ function add_qts_sitemaps_to_robots( $output, $public ) {
 add_filter( 'robots_txt', 'add_qts_sitemaps_to_robots', 2, 2 );
 
 
+add_filter( 'use_block_editor_for_post_type', function( $use, $post_type ){
+    return in_array( $post_type, [ 'news' ] );
+}, 100, 2 );
 
