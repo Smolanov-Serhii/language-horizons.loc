@@ -1,5 +1,6 @@
 <?php
-$post_id = get_the_ID();
+//$post_id = get_the_ID();
+$post_id = 2;
 ?>
 <section class="contacts" id="contacts">
     <div class="contacts__container main-container">

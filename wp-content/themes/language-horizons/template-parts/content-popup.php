@@ -9,13 +9,13 @@ $post_id = get_the_ID();
                 <path d="M4.16663 20.8333L20.8333 4.16663" stroke="#BDBDBD" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <img src="<?php echo the_field('kartinka_bloka_kontakty', $post_id) ?>" alt="<?php the_field('zagolovok_bloka_kontakty', $post_id )?>">
+        <img src="<?php echo the_field('kartinka_bloka_kontakty', 2) ?>" alt="<?php the_field('zagolovok_bloka_kontakty', 2 )?>">
         <div class="contacts__container">
             <h3 class="section-title contacts__title">
-                <?php the_field('zagolovok_bloka_kontakty', $post_id )?>
+                <?php the_field('zagolovok_bloka_kontakty', 2 )?>
             </h3>
             <div class="contacts__desc">
-                <p><?php the_field('opisanie_bloka_kontakty', $post_id )?></p>
+                <p><?php the_field('opisanie_bloka_kontakty', 2 )?></p>
             </div>
             <?php echo do_shortcode('[contact-form-7 id="d78dd30" title="Контактная форма"]')?>
         </div>

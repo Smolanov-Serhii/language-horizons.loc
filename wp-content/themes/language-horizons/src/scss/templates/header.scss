@@ -8,12 +8,13 @@
     box-shadow: 0px 4px 20px rgba(169, 190, 202, 0);
     transition: 0.3s ease-in-out;
     z-index: 50;
+    height: auto;
     @media all and (max-width: 1920px){
         padding: px(23) 0;
     }
     @media all and (max-width: 1024px){
         padding: px(14) 0;
-        height: px(70);
+        //height: px(70);
     }
     &__container{
         display: flex;
@@ -174,14 +175,21 @@
             font-size: 20px;
             font-style: normal;
             font-weight: 600;
-            margin: 0 21px;
+            margin: 0 6px;
             text-decoration: none;
+            display: block!important;
             @media all and (max-width: 1920px){
                 font-size: px(20);
-                margin: 0 px(21);
+                margin: 0 px(6);
             }
             @media all and (max-width: 1199px){
                 font-size: px(16);
+            }
+            @media all and (max-width: 1024px){
+                svg{
+                    width: px(40);
+                    height: px(40);
+                }
             }
         }
     }

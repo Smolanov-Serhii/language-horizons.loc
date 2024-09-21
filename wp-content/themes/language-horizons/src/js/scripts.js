@@ -60,11 +60,11 @@ $(document).ready(function () {
         }
     })
     function RevSlider(){
-        var MarketSlider = new Swiper(".reviews .swiper", {
+        var MarketSlider = new Swiper(".reviews .swiper, .news .swiper", {
             slidesPerView: 3,
             spaceBetween: 30,
             pagination: {
-                el: '.reviews .swiper-pagination',
+                el: '.reviews .swiper-pagination, .news .swiper-pagination',
                 clickable: true,
             },
             loop: true,
@@ -88,7 +88,7 @@ $(document).ready(function () {
             },
         });
     }
-    if ($('.reviews').length) {
+    if ($('.reviews, .news').length) {
         RevSlider();
     }
 
