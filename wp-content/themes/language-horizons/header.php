@@ -27,16 +27,16 @@ $post_id = get_the_ID();
     if ($currentLang == "ua"){
         echo '<meta http-equiv="content-language" content="ua">';
         ?>
-        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
-        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
-        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>" />
+<!--        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
+<!--        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
+<!--        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
         <?php
     } else if ($currentLang == "ru"){
         echo '<meta http-equiv="content-language" content="ru">';
         ?>
-        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>"/>
-        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
-        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>" />
+<!--        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--"/>-->
+<!--        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
+<!--        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
         <?php
     } else {
         ?>
