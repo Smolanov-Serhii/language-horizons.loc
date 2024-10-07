@@ -22,7 +22,7 @@ get_header();
                         <img src="<?php echo get_field('kartinka_v_baner', $post_id )?>" alt="<?php echo wp_filter_nohtml_kses( $data );?>">
                     </div>
                     <div class="single-offer__content">
-                        <h2 class="single-offer__title section-title"><?php echo get_field('zagolovok_v_baner', $post_id )?></h2>
+                        <h1 class="single-offer__title section-title"><?php echo get_field('zagolovok_v_baner', $post_id )?></h1>
                         <div class="single-offer__desc">
                             <p><?php echo get_field('podzagolovok_v_baner', $post_id )?></p>
                         </div>
@@ -42,7 +42,7 @@ get_header();
             </section>
             <?php
             get_template_part( 'template-parts/content', 'text' );
-            get_template_part( 'template-parts/content', 'news' );
+//            get_template_part( 'template-parts/content', 'news' );
             get_template_part( 'template-parts/content', 'contacts' );
             ?>
         </div>

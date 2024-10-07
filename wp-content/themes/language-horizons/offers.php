@@ -18,7 +18,7 @@ get_header();
             <?php
             get_template_part( 'template-parts/content', 'banner' );
             get_template_part( 'template-parts/content', 'services' );
-            get_template_part( 'template-parts/content', 'news' );
+//            get_template_part( 'template-parts/content', 'news' );
             get_template_part( 'template-parts/content', 'contacts' );
             ?>
         </div>

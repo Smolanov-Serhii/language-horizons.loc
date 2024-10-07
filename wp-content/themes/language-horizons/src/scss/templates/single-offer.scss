@@ -7,6 +7,12 @@
   @media all and (max-width: 1024px){
     padding-top: px(120);
   }
+  h1{
+    text-align: left;
+    @media all and (max-width: 568px){
+      text-align: center;
+    }
+  }
   &:before{
     position: absolute;
     content: "";
@@ -85,7 +91,9 @@
     p{
       @media all and (max-width: 568px){
         margin-bottom: px(20);
+        text-align: center;
       }
+
     }
   }
   &__unprice{
