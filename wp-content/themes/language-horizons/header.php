@@ -11,9 +11,39 @@
 $post_id = get_the_ID();
 ?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<?php
+    $currentLang = qtranxf_getLanguage();
+    if ($currentLang == "ua"){
+        echo '<html lang="ua">';
+    } else if ($currentLang == "ru"){
+        echo '<html lang="ru">';
+    } else {
+        echo '<html lang="en">';
+    }
+?>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+    <?php
+    $currentLang = qtranxf_getLanguage();
+    if ($currentLang == "ua"){
+        echo '<meta http-equiv="content-language" content="ua">';
+        ?>
+        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
+        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
+        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>" />
+        <?php
+    } else if ($currentLang == "ru"){
+        echo '<meta http-equiv="content-language" content="ru">';
+        ?>
+        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>"/>
+        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
+        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/<?php echo get_page_uri();?>" />
+        <?php
+    } else {
+        ?>
+            <meta charset="<?php bloginfo( 'charset' ); ?>">
+        <?php
+    }
+    ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="629cbc3a24436817" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
