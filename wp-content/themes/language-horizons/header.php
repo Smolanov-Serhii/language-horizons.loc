@@ -15,32 +15,51 @@ $post_id = get_the_ID();
     $currentLang = qtranxf_getLanguage();
     if ($currentLang == "ua"){
         echo '<html lang="ua">';
+        echo '<meta http-equiv="content-language" content="ua">';
     } else if ($currentLang == "ru"){
         echo '<html lang="ru">';
+        echo '<meta http-equiv="content-language" content="ru">';
     } else {
         echo '<html lang="en">';
+        echo '<meta charset="' . bloginfo( 'charset' ) . '">';
     }
 ?>
 <head>
     <?php
     $currentLang = qtranxf_getLanguage();
     if ($currentLang == "ua"){
-        echo '<meta http-equiv="content-language" content="ua">';
+
+            if (is_front_page()){
+                ?>
+<!--                <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/" />-->
+<!--                <link rel="alternate" href="https://language-horizons.com/" hreflang="x-default" />-->
+                <?php
+            } else {
+                ?>
+<!--                <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
+<!--                <link rel="alternate" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--" hreflang="x-default" />-->
+                <?php
+            }
         ?>
-<!--        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
-<!--        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
-<!--        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
         <?php
     } else if ($currentLang == "ru"){
-        echo '<meta http-equiv="content-language" content="ru">';
-        ?>
-<!--        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--"/>-->
-<!--        <link rel="alternate" hreflang="ua" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
-<!--        <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
-        <?php
+
+        if (is_front_page()){
+            ?>
+<!--            <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/"/>-->
+<!--            <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/" />-->
+            <?php
+        } else {
+            ?>
+<!--            <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
+<!--            <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
+            <?php
+        }
     } else {
         ?>
-            <meta charset="<?php bloginfo( 'charset' ); ?>">
+
+        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
+        <link rel="alternate" hreflang="en" href="https://language-horizons.com/en/<?php echo get_page_uri();?>" />
         <?php
     }
     ?>
