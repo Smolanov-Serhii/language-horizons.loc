@@ -16,13 +16,13 @@ $transition: 0.2s;
   outline: none !important;
   -webkit-tap-highlight-color: transparent;
   font-feature-settings: 'pnum' on, 'lnum' on;
-  -webkit-user-select: none;
+  //-webkit-user-select: none;
   /* user-select -- это нестандартное свойство */
 
-  -moz-user-select: none;
+  //-moz-user-select: none;
   /* поэтому нужны префиксы */
 
-  -ms-user-select: none;
+  //-ms-user-select: none;
 }
 html{
   font-family: "Inter", sans-serif;
@@ -58,6 +58,18 @@ body{
     pointer-events: none;
     z-index: 50;
     transition: 0.3s ease-in-out;
+  }
+}
+.grecaptcha-badge{
+  visibility: hidden!important;
+}
+.main{
+  &-wrapper{
+    display: flex;
+    flex-direction: column;
+    .seo{
+      order: 100;
+    }
   }
 }
 img{
@@ -278,6 +290,11 @@ p{
 @import "templates/process";
 @import "templates/faq";
 @import "templates/contacts";
+@import "templates/seo";
+@import "templates/breadcrumb";
+@import "templates/news";
+@import "templates/single-offer";
+@import "templates/services";
 @import "templates/footer";
 @import "templates/popup";
 

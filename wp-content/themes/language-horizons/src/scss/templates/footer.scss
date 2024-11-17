@@ -81,10 +81,6 @@
   &__contacts{
     display: flex;
     align-items: center;
-    margin-right: 43px;
-    @media all and (max-width: 1920px){
-      margin-right: px(43);
-    }
     @media all and (max-width: 1024px){
       margin-right: 0;
     }
@@ -93,14 +89,27 @@
       font-size: 20px;
       font-style: normal;
       font-weight: 600;
-      margin: 0 21px;
+      margin: 0 6px;
       text-decoration: none;
+      display: block!important;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
       @media all and (max-width: 1920px){
         font-size: px(20);
-        margin: 0 px(21);
+        margin: 0 px(6);
       }
       @media all and (max-width: 1199px){
         font-size: px(16);
+      }
+      @media all and (max-width: 768px){
+        svg{
+          width: px(40);
+          height: px(40);
+        }
       }
     }
   }

@@ -182,6 +182,9 @@ strong{
 }
 .text{
   margin-bottom: 70px;
+  strong{
+    font-weight: 600;
+  }
   ul{
     list-style: none;
   }
@@ -195,16 +198,19 @@ strong{
     li{
       font-weight: 400;
       font-size: 1.6rem;
-      line-height: 115%;
+      line-height: 140%;
       margin-bottom: 1.1rem;
       &::marker{
-        color: #FF6A13;
+        color: #ca85d5;
+      }
+      ul, ol{
+        margin-top: 1rem;
       }
     }
   }
   a{
     text-decoration-line: underline;
-    color: #00CFFD;
+    color: #ca85d5;
   }
 }
 

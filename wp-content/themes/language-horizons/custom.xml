@@ -1,13 +1,64 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-	<loc>https://language-horizons.com/</loc>
-	<lastmod>2024-08-08T12:15:39+01:00</lastmod>
-	<priority>1.0</priority>
-</url>
-<url>
-	<loc>https://language-horizons.com/ru/</loc>
-	<lastmod>2024-08-08T12:15:39+01:00</lastmod>
-	<priority>0.8</priority>
-</url>
+﻿This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+	<!--  created with Free Online Sitemap Generator www.xml-sitemaps.com  -->
+	<url>
+		<loc>https://language-horizons.com/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/offers/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.80</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/offers/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/offers/individualnoe-zanyatie/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/offers/zanyatie-v-gruppe/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/offers/zanyatie-v-razgovornom-klube/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/offers/podgotovka-k-testam-dlya-sdachi-prisyagi/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.64</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/offers/individualnoe-zanyatie/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.51</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/offers/zanyatie-v-gruppe/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.51</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/offers/zanyatie-v-razgovornom-klube/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.51</priority>
+	</url>
+	<url>
+		<loc>https://language-horizons.com/ru/offers/podgotovka-k-testam-dlya-sdachi-prisyagi/</loc>
+		<lastmod>2024-10-07T09:01:26+00:00</lastmod>
+		<priority>0.51</priority>
+	</url>
 </urlset>

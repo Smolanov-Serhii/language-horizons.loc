@@ -45,7 +45,7 @@ function language_horizons_setup() {
         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
         */
     add_theme_support( 'post-thumbnails' );
-
+    add_image_size( 'news-image-prev', 300, 500 );
     // This theme uses wp_nav_menu() in one location.
     register_nav_menus(
         array(
@@ -196,3 +196,9 @@ function add_qts_sitemaps_to_robots( $output, $public ) {
     return $output;
 }
 add_filter( 'robots_txt', 'add_qts_sitemaps_to_robots', 2, 2 );
+
+
+add_filter( 'use_block_editor_for_post_type', function( $use, $post_type ){
+    return in_array( $post_type, [ 'news' ] );
+}, 100, 2 );
+

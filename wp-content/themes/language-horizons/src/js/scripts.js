@@ -60,11 +60,11 @@ $(document).ready(function () {
         }
     })
     function RevSlider(){
-        var MarketSlider = new Swiper(".reviews .swiper", {
+        var MarketSlider = new Swiper(".reviews .swiper, .news .swiper", {
             slidesPerView: 3,
             spaceBetween: 30,
             pagination: {
-                el: '.reviews .swiper-pagination',
+                el: '.reviews .swiper-pagination, .news .swiper-pagination',
                 clickable: true,
             },
             loop: true,
@@ -88,7 +88,7 @@ $(document).ready(function () {
             },
         });
     }
-    if ($('.reviews').length) {
+    if ($('.reviews, .news').length) {
         RevSlider();
     }
 
@@ -144,17 +144,17 @@ $(document).ready(function () {
     }
     PopupInit();
 
-    $(".header__nav a").on("click", function(e){
-        e.preventDefault();
-
-        var anchor = $(this).attr('href');
-        $('html, body').stop().animate({
-            scrollTop: $(anchor).offset().top - 100
-        }, 0);
-        $('.header__wrapper').removeClass('active');
-        $('.header').removeClass('burger');
-        $('body').removeClass('locked');
-    });
+    // $(".header__nav a").on("click", function(e){
+    //     e.preventDefault();
+    //
+    //     var anchor = $(this).attr('href');
+    //     $('html, body').stop().animate({
+    //         scrollTop: $(anchor).offset().top - 100
+    //     }, 0);
+    //     $('.header__wrapper').removeClass('active');
+    //     $('.header').removeClass('burger');
+    //     $('body').removeClass('locked');
+    // });
 
 });
 

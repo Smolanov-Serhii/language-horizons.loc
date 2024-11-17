@@ -13,6 +13,7 @@ $post_id = get_the_ID();
                 $desc = get_sub_field('opisanie');
                 $price = get_sub_field('czena');
                 $btn = get_sub_field('nadpis_na_knopke');
+                $lnk = get_sub_field('lnk');
                 ?>
                 <div class="price__item">
                     <img src="<?php echo $icon;?>" alt="<?php echo $title;?>">
@@ -26,9 +27,9 @@ $post_id = get_the_ID();
                         <?php echo $price;?>
                     </div>
                     <div class="price__item-btn">
-                        <div class="button js-form">
+                        <a href="<?php echo $lnk;?>" class="button" title="<?php echo $title;?>">
                             <span><?php echo $btn;?></span>
-                        </div>
+                        </a>
                     </div>
 
                 </div>

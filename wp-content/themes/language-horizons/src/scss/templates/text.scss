@@ -12,6 +12,11 @@
       margin-bottom: px(40);
     }
   }
+  &__desc{
+    @media all and (max-width: 568px){
+      text-align: left;
+    }
+  }
   &__container{
     ol, ul{
       color: #181717;
@@ -29,8 +34,12 @@
         font-size: px(14);
       }
       li{
+        margin-bottom: px(10);
         @media all and (max-width: 768px){
           margin-bottom: px(10);
+        }
+        ul, ol{
+          margin-top: 1rem;
         }
         &::marker{
           font-weight: 700;
@@ -46,9 +55,6 @@
     }
     p{
       margin-bottom: 1em;
-      @media all and (max-width: 768px){
-        text-align: center;
-      }
     }
   }
 }

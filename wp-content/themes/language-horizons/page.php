@@ -25,7 +25,6 @@ get_header();
             get_template_part( 'template-parts/content', 'process' );
             get_template_part( 'template-parts/content', 'faq' );
             get_template_part( 'template-parts/content', 'contacts' );
-            get_template_part( 'template-parts/content', 'popup' );
         ?>
 	</main>
 <?php
