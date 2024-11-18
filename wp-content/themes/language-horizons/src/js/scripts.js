@@ -22,22 +22,23 @@ $(document).ready(function () {
     // });
 
     var $menu = $("header");
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         var winScrollTop = $(this).scrollTop();
-        if ( $(this).scrollTop() > 20 && $menu.hasClass("default")){
+        if ($(this).scrollTop() > 20 && $menu.hasClass("default")) {
             $menu.removeClass("default").addClass("moved");
-        } else if($(this).scrollTop() <= 20 && $menu.hasClass("moved")) {
+        } else if ($(this).scrollTop() <= 20 && $menu.hasClass("moved")) {
             $menu.removeClass("moved").addClass("default");
         }
     });
-    if ($(".header__popup").length){
-        document.addEventListener( 'wpcf7mailsent', function( event ) {
+    if ($(".header__popup").length) {
+        document.addEventListener('wpcf7mailsent', function (event) {
             $('.header__popup').fadeIn(300);
-        }, false );
-        $( ".header__popup-close" ).on( "click", function() {
+        }, false);
+        $(".header__popup-close").on("click", function () {
             $('.header__popup').fadeOut(300);
-        } );
-    };
+        });
+    }
+    ;
 
     $(".header__burger").click(function () {
         $('.header').toggleClass('burger');
@@ -49,17 +50,18 @@ $(document).ready(function () {
         $('.header').removeClass('burger');
         $('body').removeClass('locked');
     });
-    const div = document.querySelector( '.header');
+    const div = document.querySelector('.header');
 
-    document.addEventListener( 'click', (e) => {
+    document.addEventListener('click', (e) => {
         const withinBoundaries = e.composedPath().includes(div);
-        if ( ! withinBoundaries ) {
+        if (!withinBoundaries) {
             $('.header__wrapper').removeClass('active');
             $('.header').removeClass('burger');
             $('body').removeClass('locked');
         }
     })
-    function RevSlider(){
+
+    function RevSlider() {
         var MarketSlider = new Swiper(".reviews .swiper, .news .swiper", {
             slidesPerView: 3,
             spaceBetween: 30,
@@ -88,14 +90,15 @@ $(document).ready(function () {
             },
         });
     }
+
     if ($('.reviews, .news').length) {
         RevSlider();
     }
 
-    function FaqClick(){
-        if($('.faq').length){
-            $(".faq__item-title, .faq__item svg").click(function() {
-                if ($(this).closest('.faq__item').hasClass('active')){
+    function FaqClick() {
+        if ($('.faq').length) {
+            $(".faq__item-title, .faq__item svg").click(function () {
+                if ($(this).closest('.faq__item').hasClass('active')) {
                     $(this).closest('.faq__item').removeClass("active");
                     $(this).closest('.faq').find('.faq__item-desc').fadeOut(300);
                 } else {
@@ -107,20 +110,25 @@ $(document).ready(function () {
             });
         }
     }
+
     FaqClick();
 
-    function PopupInit(){
-        document.addEventListener( 'wpcf7mailsent', function( event ) {
+    function PopupInit() {
+        document.addEventListener('wpcf7mailsent', function (event) {
             $('.popup').fadeOut(300);
             $('#success-send').fadeIn(300);
-            $('.wpcf7-response-output').empty();
-            setTimeout(function (){
+            // $('.wpcf7-response-output').empty();
+            setTimeout(function () {
                 $('#success-send').fadeOut(300);
                 $('body').removeClass('locked');
             }, 2000);
-            gtag('event', 'conversion', { 'send_to': 'AW-494767027/plX3CJq35PsBELOX9usB', 'value': 1.0, 'currency': 'USD' });
+            gtag('event', 'conversion', {
+                'send_to': 'AW-494767027/plX3CJq35PsBELOX9usB',
+                'value': 1.0,
+                'currency': 'USD'
+            });
 
-        }, false );
+        }, false);
         $(".js-form").click(function () {
             $('body').addClass('locked');
             $('.popup').fadeIn(300);
@@ -130,18 +138,19 @@ $(document).ready(function () {
             $(this).closest('.popup').fadeOut(300);
         });
 
-        const div = document.querySelector( '.header');
+        const div = document.querySelector('.header');
 
-        document.addEventListener( 'click', (e) => {
+        document.addEventListener('click', (e) => {
             const withinBoundaries = e.composedPath().includes(div);
 
-            if ( ! withinBoundaries ) {
+            if (!withinBoundaries) {
                 $('.js-burger').removeClass('active');
                 $('.header').removeClass('clicked');
                 $('.header__mobile').fadeOut(300);
             }
         })
     }
+
     PopupInit();
 
     // $(".header__nav a").on("click", function(e){
@@ -155,6 +164,7 @@ $(document).ready(function () {
     //     $('.header').removeClass('burger');
     //     $('body').removeClass('locked');
     // });
-
+    // <button type="submit" className="wpcf7-form-control wpcf7-submit btn btn-primary button">
+    //     <span>[:ru]ЗАПИСАТЬСЯ[:ua]ЗАПИСАТИСЯ[:]</span></button>
 });
 

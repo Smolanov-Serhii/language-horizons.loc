@@ -182,7 +182,7 @@ img{
     font-size: px(14);
   }
 }
-.button{
+.button, .wpcf7-submit{
   height: 55px;
   display: inline-flex;
   align-items: center;
@@ -193,7 +193,19 @@ img{
   transition: 0.3s ease-in-out;
   min-width: 270px;
   cursor: pointer;
+  border: none;
   //box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  @media all and (max-width: 1920px){
+    font-size: px(16);
+  }
+  @media all and (max-width: 768px){
+    font-size: px(14);
+  }
   @media all and (max-width: 1920px){
     min-width: px(270);
     height: px(55);
@@ -256,8 +268,37 @@ img{
   }
 }
 
-.wpcf7-response-output, .wpcf7-spinner{
+.wpcf7-response-output{
   display: none!important;
+}
+.wpcf7-spinner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 0;
+  margin-left: 0;
+  z-index: 50;
+  opacity: 1;
+  &:before{
+    display: none;
+  }
+  &:after{
+    content: "";
+    display: block;
+    position: static;
+    background-image: url("../../img/spinner.gif");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+    width: 100px;
+    background-size: contain;
+  }
 }
 p{
   color: #181717;
