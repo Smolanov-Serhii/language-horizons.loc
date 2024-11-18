@@ -202,3 +202,16 @@ add_filter( 'use_block_editor_for_post_type', function( $use, $post_type ){
     return in_array( $post_type, [ 'news' ] );
 }, 100, 2 );
 
+add_filter( 'disable_wpseo_json_ld_search', '__return_true' );
+
+
+remove_action( 'do_feed_rdf',  'do_feed_rdf',  10, 1 );
+remove_action( 'do_feed_rss',  'do_feed_rss',  10, 1 );
+remove_action( 'do_feed_rss2', 'do_feed_rss2', 10, 1 );
+remove_action( 'do_feed_atom', 'do_feed_atom', 10, 1 );
+
+add_action( 'wp', function(){
+    remove_action( 'wp_head', 'feed_links_extra', 3 );
+    remove_action( 'wp_head', 'feed_links', 2 );
+    remove_action( 'wp_head', 'rsd_link' );
+} );
