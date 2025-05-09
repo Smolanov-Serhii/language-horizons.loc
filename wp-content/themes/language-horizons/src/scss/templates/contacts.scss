@@ -118,4 +118,71 @@
       }
     }
   }
+  .accept-text p{
+    font-weight: 400;
+    font-size: 14px;
+    color: #ca85d5;
+    @media all and (max-width: 1920px){
+      font-size: px(14);
+    }
+  }
+  .files{
+    margin-bottom: 0;
+    margin-top: 10px;
+    @media all and (max-width: 1920px) {
+      margin-top: px(10);
+    }
+      p{
+      display: flex;
+      flex-direction: column;
+    }
+    & + p{
+      display: none;
+    }
+    input{
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      display: none;
+    }
+    br{
+      display: none;
+    }
+    .single-file{
+      display: inline-flex;
+      align-items: center;
+      margin-bottom: 20px;
+      cursor: pointer;
+      @media all and (max-width: 1920px){
+        margin-bottom: px(20);
+      }
+      svg{
+        margin-right: 10px;
+        position: static;
+        left: 0;
+        top: 0;
+        width: 16px;
+        height: 16px;
+        @media all and (max-width: 1920px){
+          margin-right: px(10);
+          width: px(16);
+          height: px(16);
+        }
+      }
+      .wpcf7-form-control-wrap{
+        display: none;
+      }
+      span{
+        font-weight: 400;
+        font-size: 14px;
+        color: #000000;
+        text-decoration: underline;
+        width: calc(100% - 26px);
+        @media all and (max-width: 1920px){
+          font-size: px(14);
+          width: calc(100% - px(26));
+        }
+      }
+    }
+  }
 }

@@ -8,7 +8,7 @@ $post_id = get_the_ID();
             <div class="news__wrapper  swiper-wrapper">
                 <?php
                 $result = wp_get_recent_posts( [
-                    'numberposts'      => 0,
+                    'numberposts'      => 10,
                     'offset'           => 0,
                     'category'         => 0,
                     'orderby' => 'rand',
@@ -18,7 +18,7 @@ $post_id = get_the_ID();
                     'meta_key'         => '',
                     'meta_value'       => '',
                     'post_type'        => 'news',
-                    'post_status'      => 'draft, publish, future, pending, private',
+                    'post_status'      => 'publish',
                     'suppress_filters' => true,
                 ], OBJECT );
                 foreach( $result as $post ){

@@ -1,0 +1,108 @@
+.workpluses{
+  margin-top: 68px;
+  @media all and (max-width: 1920px){
+    margin-top: px(68);
+  }
+  &__container{
+
+  }
+  &__title{
+    text-align: center;
+    margin-bottom: 90px;
+    @media all and (max-width: 1920px){
+      margin-bottom: px(90);
+    }
+    @media all and (max-width: 1024px){
+      margin-bottom: px(40);
+    }
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item{
+    width: calc(33.3333% - 20px);
+    margin-bottom: 20px;
+    background: #FAF9F7;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px 40px 40px;
+    @media all and (max-width: 1920px){
+      width: calc(33.333% - px(20));
+      margin-bottom: px(20);
+      border-radius: px(20);
+      padding: px(60) px(40) px(40) px(40);
+    }
+    @media all and (max-width: 1024px){
+      padding: px(40) px(30) px(30) px(30);
+    }
+    @media all and (max-width: 768px){
+      width: 100%;
+    }
+    @media all and (max-width: 480px){
+      padding: px(40) px(20) px(20) px(20);
+    }
+    &-img{
+      width: 122px;
+      height: px(122);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 62px;
+      @media all and (max-width: 1920px){
+        width: px(122);
+        height: px(122);
+        margin-bottom: px(62);
+      }
+      @media all and (max-width: 1024px){
+        width: px(80);
+        height: px(80);
+        margin-bottom: px(30);
+      }
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    &-title{
+      font-weight: 600;
+      font-size: 20px;
+      line-height: normal;
+      color: #181717;
+      margin-bottom: 20px;
+      text-align: center;
+      @media all and (max-width: 1920px){
+        font-size: px(20);
+        margin-bottom: px(20);
+      }
+      @media all and (max-width: 1024px){
+        font-size: px(18);
+        margin-bottom: px(14);
+      }
+      @media all and (max-width: 768px){
+        font-size: px(16);
+      }
+    }
+    &-desc p{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: normal;
+      color: #181717;
+      text-align: center;
+      margin-bottom: 0;
+      @media all and (max-width: 1920px){
+        font-size: px(16);
+      }
+      @media all and (max-width: 1024px){
+        font-size: px(14);
+      }
+      @media all and (max-width: 768px){
+        font-size: px(13);
+      }
+    }
+  }
+}

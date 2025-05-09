@@ -166,5 +166,9 @@ $(document).ready(function () {
     // });
     // <button type="submit" className="wpcf7-form-control wpcf7-submit btn btn-primary button">
     //     <span>[:ru]ЗАПИСАТЬСЯ[:ua]ЗАПИСАТИСЯ[:]</span></button>
+
+    $('.single-file input').change(function() {
+        $(this).closest(".single-file").find("span:not(.wpcf7-form-control-wrap)").text($(this)[0].files[0].name);
+    });
 });
 
