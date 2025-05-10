@@ -42,7 +42,7 @@ get_header();
             </section>
             <?php
             get_template_part( 'template-parts/content', 'text' );
-//            get_template_part( 'template-parts/content', 'news' );
+            get_template_part( 'template-parts/content', 'news' );
             get_template_part( 'template-parts/content', 'contacts' );
             ?>
         </div>

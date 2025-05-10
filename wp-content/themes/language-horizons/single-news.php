@@ -13,22 +13,33 @@ get_header();
 ?>
 
 	<main class="main">
-        <div class="single-news">
-            <div class="single-news__img">
-                <?php the_post_thumbnail( 'full' );;?>
-                <h1 class="single-news__title"><?php the_title();;?></h1>
-            </div>
-            <div class="main__container main-container">
-                <?php
-                the_content();
-                ?>
-                <div class="single-news__share">
-                    <p>Share this content, choose your platform!</p>
+        <div class="main-wrapper">
+            <section class="seo single-news__seo">
+                <div class="seo__container main-container">
+                    <?php
+                    the_content();
+                    ?>
+                </div>
+                <div class="single-news__share main-container">
+                    <p><?php echo the_field('tekst_podelitsya', 'option') ?></p>
                     <?php echo do_shortcode('[addtoany url="' . get_the_permalink() . '" title="' . get_the_title() . '"]') ?>
                 </div>
-            </div>
-
+            </section>
+            <section class="single-news">
+                <div class="single-news__container main-container">
+                    <div class="single-news__img">
+                        <img src="<?php echo the_field('kartinka_v_shapku', $post_id) ?>" alt="<?php the_title();;?>">
+                    </div>
+                    <div class="single-news__content">
+                        <h1 class="single-news__title section-title"><?php the_title();;?></h1>
+                    </div>
+                </div>
+            </section>
         </div>
+        <?php
+        get_template_part( 'template-parts/content', 'news' );
+        get_template_part( 'template-parts/content', 'contacts' );
+        ?>
 
 	</main>
 

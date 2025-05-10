@@ -23,6 +23,7 @@ get_header();
             get_template_part( 'template-parts/content', 'text' );
             get_template_part( 'template-parts/content', 'reviews' );
             get_template_part( 'template-parts/content', 'process' );
+        get_template_part( 'template-parts/content', 'news' );
             get_template_part( 'template-parts/content', 'faq' );
             get_template_part( 'template-parts/content', 'contacts' );
         ?>

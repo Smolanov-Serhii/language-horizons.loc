@@ -4,7 +4,6 @@ Template Name: Страница новостей
  */
 
 $post_id = get_the_ID();
-$data = get_field('zagolovok_v_baner', $post_id );
 get_header();
 ?>
     <main class="main">
@@ -16,27 +15,26 @@ get_header();
                     ?>
                 </div>
             </section>
-            <section class="news">
+            <section class="news-page">
+                <h1 class="news-page__title">
+                   <?php the_title();?>
+                </h1>
                 <div class="portfolio-all__filter">
-                    <?php echo do_shortcode( '[searchandfilter id="111"]' ); ?>
+                    <?php echo do_shortcode( '[searchandfilter id="543"]' ); ?>
                 </div>
-                <div class="portfolio-all__result" id="result">
+                <div class="news-page__result" id="result">
                     <?php
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $args = array(
                         'posts_per_page' => 12,
                         'order' 	 => 'DESC',
-                        'post_type' 	 => 'portfolio',
-                        'search_filter_id' => 111,
+                        'post_type' 	 => 'news',
+                        'search_filter_id' => 543,
                         'orderby' => "menu_order",
                         'paged'	         => $paged
                     );
 
                     $MY_QUERY = new WP_Query( $args );
-                    $counter = 1;
-                    $pair = 1;
-                    $paitrigger = false;
-                    $trigger = false;
                     if ( $MY_QUERY->have_posts() ) :
                         while ( $MY_QUERY->have_posts() ) : $MY_QUERY->the_post();
                             $img = get_field('kartinka_dlya_bloka');
@@ -44,76 +42,32 @@ get_header();
                             $imgpc = get_field('kartinka_v_popap_pk');
                             $videopc = get_field('video_v_popap_pk');
                             $videomob = get_field('video_v_popap_mobajl');
-                            if ($counter == 1){
-                                $trigger = false;
-                                ?>
-                                <div class='or__group'>
-                                <?php
-                            };
-                        if ($pair == 1){
-                            $paitrigger = true;
                             ?>
-                            <div class='or__pair <?php echo 'pair' . $counter;?>'>
-                            <?php
-                        };
-                            ?>
-                            <div class="or__item <?php echo 'or__item-div' . $counter;?>">
-                                <?php
-                                if (wp_is_mobile()){
-                                    if ($videomob){
-                                        ?>
-                                        <div class="or__item-full video-popup-file" data-video="<?php echo $videomob?>"></div>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <div class="or__item-full fresco" href="<?php echo $imgmob?>"></div>
-                                        <?php
-                                    }
-                                } else {
-                                    if ($videopc){
-                                        ?>
-                                        <div class="or__item-full video-popup-file" data-video="<?php echo $videopc?>"></div>
-                                        <?php
-                                    } else {
-                                        ?>
-                                        <div class="or__item-full fresco" href="<?php echo $imgpc?>"></div>
-                                        <?php
-                                    }
-                                }
-                                ?>
+                            <div class="news__slide">
+                                <div class="news__slide-img" title="<?php the_title();?>">
+                                    <a href="<?php the_permalink();?>">
+                                        <?php the_post_thumbnail( 'news-image-prev' );;?>
+                                    </a>
+                                </div>
+                                <div class="news__slide-content">
+                                    <div class="news__slide-date">
+                                        <?php the_date('d F y');?>
+                                    </div>
+                                    <a href="<?php the_permalink();?>" title="<?php the_title();?>">
+                                        <h3 class="news__slide-title">
+                                            <?php the_title();?>
+                                        </h3>
+                                    </a>
+                                    <a href="<?php the_permalink();?>" title="<?php the_title();?>">
+                                        <div class="news__slide-desc">
+                                            <?php the_excerpt();?>
+                                        </div>
+                                    </a>
 
-                                <div class="or__item-img">
-                                    <img src="<?php echo $img?>" alt="<?php echo the_title()?>">
                                 </div>
-                                <h3 class="or__item-title">
-                                    <?php echo the_title()?>
-                                </h3>
-                                <!--                                <span class="or__item-lnk" href="--><?php //echo the_permalink();?><!--" title="--><?php //echo the_title()?><!--">See examples</span>-->
                             </div>
                             <?php
-                        if ($pair == 2){
-                            $paitrigger = false;
-                            ?>
-                            </div>
-                            <?php
-                            $pair = 0;
-                        };
-                            if ($counter == 6) {
-                                $counter = 0;
-                                $trigger = true;
-                                ?>
-                                </div>
-                                <?php
-                            }
-                            $counter ++;
-                            $pair++;
-                        endwhile;
-                        if ($paitrigger == true){
-                            echo '</div>';
-                        }
-                        if ($trigger == false){
-                            echo '</div>';
-                        }
+                        endwhile;;
                     endif;
                     ?>
                     <div class="pagination">

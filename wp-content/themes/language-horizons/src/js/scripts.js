@@ -170,5 +170,17 @@ $(document).ready(function () {
     $('.single-file input').change(function() {
         $(this).closest(".single-file").find("span:not(.wpcf7-form-control-wrap)").text($(this)[0].files[0].name);
     });
+
+    $(function() {
+        $('select').selectric();
+    });
+    $('.news-page__filter select').selectric().on('change', function() {
+        $('.sf-field-submit input').trigger('click');
+
+    });
+    $(document).on("sf:ajaxfinish", ".searchandfilter", function(){
+        console.log("ajax complete");
+        //so load your lightbox or JS scripts here again
+    });
 });
 

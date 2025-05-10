@@ -58,31 +58,35 @@
     @media all and (max-width: 480px){
       font-size: px(14);
     }
-    p{
-      font-weight: 400;
-      font-size: 1.8rem;
-      line-height: 141.9%;
-      color: #000000;
-      margin-bottom: 1em;
-      @media all and (max-width: 1600px){
-        font-size: 1.7rem;
-      }
-      @media all and (max-width: 1400px){
-        font-size: 1.6rem;
-      }
-      @media all and (max-width: 1204px){
-
-      }
-      @media all and (max-width: 500px){
-
-      }
-    }
     strong{
       font-weight: 600;
+    }
+    a{
+      color: rgba(210, 145, 222, 1);
     }
     p{
       &:last-child{
         margin-bottom: 0;
+      }
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 141.9%;
+      color: #000000;
+      margin-bottom: 1em;
+      @media all and (max-width: 1920px){
+        font-size: px(18);
+      }
+      @media all and (max-width: 1600px){
+        font-size: px(17);
+      }
+      @media all and (max-width: 1400px){
+        font-size: px(16);
+      }
+      @media all and (max-width: 1204px){
+
+      }
+      @media all and (max-width: 480px){
+        font-size: px(14);
       }
     }
     strong{
@@ -92,17 +96,23 @@
       list-style: disc;
       padding-left: 20px;
       margin-bottom: 1em;
+      @media all and (max-width: 1920px){
+        padding-left: px(20);
+      }
       li{
         font-weight: 400;
-        font-size: 1.8rem;
+        font-size: 18px;
         line-height: 141.9%;
         color: #000000;
         margin-bottom: 1em;
+        @media all and (max-width: 1920px){
+          font-size: px(18);
+        }
         @media all and (max-width: 1600px){
-          font-size: 1.7rem;
+          font-size: px(17);
         }
         @media all and (max-width: 1400px){
-          font-size: 1.6rem;
+          font-size: px(16);
         }
         @media all and (max-width: 1204px){
 

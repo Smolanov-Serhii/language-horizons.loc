@@ -1,0 +1,176 @@
+.news-page{
+  position: relative;
+  padding-top: 200px;
+  background-color: rgba(250, 249, 247, 1);
+  @media all and (max-width: 1920px){
+    padding-top: px(200);
+  }
+  @media all and (max-width: 1024px){
+    padding-top: px(120);
+  }
+  &__filter{
+    padding-bottom: 30px;
+    @media all and (max-width: 1920px){
+      padding-bottom: px(30);
+    }
+    .sf-field-submit{
+      display: none;
+    }
+    .button{
+      width: auto!important;
+    }
+    .selectric{
+      label{
+        color: rgba(24, 23, 23, 0.25);
+      }
+    }
+    > form{
+      > ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media all and (max-width: 768px){
+          flex-wrap: wrap;
+        }
+        > li{
+          width: 300px;
+          padding-top: 0;
+          padding-bottom: 0;
+          margin: 0 15px;
+          @media all and (max-width: 1920px){
+            width: px(300);
+            margin: 0 px(15);
+          }
+          @media all and (max-width: 768px){
+            width: 100%;
+            margin: 0 0 px(20) 0;
+          }
+          > label{
+            width: 100%;
+          }
+          &:last-child{
+            padding-bottom: 0;
+          }
+          @import "../selectric";
+          ul{
+            background-color: #FFFFFF;
+            max-height: 166px;
+            overflow-y: scroll;
+            padding: 18px 18px 6px 18px;
+            li{
+              display: flex;
+              padding-top: 0;
+              padding-bottom: 10px;
+              label{
+                font-size: 16px;
+                font-weight: 400;
+              }
+            }
+          }
+        }
+        h4{
+          padding-top: 0;
+          font-size: 16px;
+          font-weight: 600;
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+  &__result{
+    background-color: #FFF;
+  }
+  &__list{
+    display: flex;
+    width: calc(100% + 30px);
+    padding-top: 50px;
+    flex-wrap: wrap;
+    @media all and (max-width: 1920px){
+      margin-right: px(-30);
+      width: calc(100% + px(30));
+      padding-top: px(50);
+    }
+    @media all and (max-width: 500px){
+      margin-right: 0;
+      width: 100%;
+      padding-top: px(40);
+    }
+  }
+  &__item{
+    width: calc(33.3333% - 30px);
+    margin-right: 30px;
+    margin-bottom: 50px;
+    @media all and (max-width: 1920px){
+      margin-right: px(30);
+      width: calc(33.33333% - px(30));
+      margin-bottom: px(50);
+    }
+    @media all and (max-width: 1024px){
+      margin-right: px(30);
+      width: calc(50% - px(30));
+      margin-bottom: px(50);
+    }
+    @media all and (max-width: 500px){
+      margin-right: 0;
+      width: 100%;
+      margin-bottom: px(30);
+    }
+    &-content{
+      a{
+        text-decoration: none;
+      }
+    }
+    &-img{
+      width: 100%;
+      height: 200px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      @media all and (max-width: 1920px){
+        height: px(200);
+        border-radius: px(20);
+        margin-bottom: px(15);
+      }
+      a{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &-date{
+      color: #C4B39B;
+      font-size: 14px;
+      margin-bottom: 10px;
+      @media all and (max-width: 1920px){
+        font-size: px(14);
+        margin-bottom: px(10);
+      }
+    }
+    &-title{
+      color: #181717;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 150%;
+      margin-bottom: 10px;
+      @media all and (max-width: 1920px){
+        font-size: px(16);
+        margin-bottom: px(10);
+      }
+    }
+    &-desc{
+      color: #181717;
+      font-size: 16px;
+      p{
+        margin-bottom: 0;
+      }
+      @media all and (max-width: 1920px){
+        font-size: px(16);
+      }
+    }
+  }
+}

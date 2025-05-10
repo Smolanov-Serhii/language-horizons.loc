@@ -8,7 +8,7 @@ $post_id = get_the_ID();
             <div class="news__wrapper  swiper-wrapper">
                 <?php
                 $result = wp_get_recent_posts( [
-                    'numberposts'      => 10,
+                    'numberposts'      => 12,
                     'offset'           => 0,
                     'category'         => 0,
                     'orderby' => 'rand',
@@ -31,7 +31,7 @@ $post_id = get_the_ID();
                         </div>
                         <div class="news__slide-content">
                             <div class="news__slide-date">
-                                <?php the_date('d F y');?>
+                                <?php echo get_the_date('d F y');?>
                             </div>
                             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
                                 <h3 class="news__slide-title">

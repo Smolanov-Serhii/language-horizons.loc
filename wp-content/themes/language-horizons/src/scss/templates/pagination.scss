@@ -1,0 +1,51 @@
+.pagination{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .nav-links{
+    display: flex;
+    align-items: center;
+  }
+  .page-numbers{
+    margin: 0 11px;
+    text-decoration: none;
+    display: inline-flex;
+    color: #1D1D1D;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    @media all and (max-width: 1920px){
+      margin: 0 px(11);
+      font-size: px(16);
+    }
+    &.current{
+      color: rgba(24, 23, 23, 1);
+      font-weight: 700;
+    }
+    &.next{
+      color: transparent;
+      width: 40px;
+      height: 40px;
+      background-image: url("../../img/pagination/next.svg");
+      background-position: center;
+      background-size: contain;
+      @media all and (max-width: 1920px){
+        width: px(40);
+        height: px(40);
+      }
+    }
+    &.prev{
+      color: transparent;
+      width: 40px;
+      height: 40px;
+      background-image: url("../../img/pagination/prev.svg");
+      background-position: center;
+      background-size: contain;
+      @media all and (max-width: 1920px){
+        width: px(40);
+        height: px(40);
+      }
+    }
+  }
+}
