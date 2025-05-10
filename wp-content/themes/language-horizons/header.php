@@ -200,8 +200,8 @@ if ( !is_404() ) {
         </div>
         <?php if ($post_id <> 2){
             echo '<div class="breadcrumb main-container">';
-            if(function_exists('bcn_display')){
-                bcn_display();
+            if (function_exists('yoast_breadcrumb')) {
+                yoast_breadcrumb();
             }
             echo '</div>';
         }
