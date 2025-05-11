@@ -50,6 +50,11 @@ $(document).ready(function () {
         $('.header').removeClass('burger');
         $('body').removeClass('locked');
     });
+    $("#primary-menu a").click(function () {
+        $('.header__wrapper').removeClass('active');
+        $('.header').removeClass('burger');
+        $('body').removeClass('locked');
+    });
     const div = document.querySelector('.header');
 
     document.addEventListener('click', (e) => {
