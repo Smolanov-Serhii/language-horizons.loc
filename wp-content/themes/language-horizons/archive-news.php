@@ -43,9 +43,9 @@ get_header();
                                                 <?php the_date('d F y');?>
                                             </div>
                                             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
-                                                <h3 class="news-page__item-title">
+                                                <h2 class="news-page__item-title">
                                                     <?php the_title();?>
-                                                </h3>
+                                                </h2>
                                             </a>
                                             <a href="<?php the_permalink();?>" title="<?php the_title();?>">
                                                 <div class="news-page__item-desc">

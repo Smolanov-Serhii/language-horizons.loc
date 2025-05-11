@@ -24,8 +24,8 @@ $post_id = get_the_ID();
                 foreach( $result as $post ){
                     ?>
                     <div class="news__slide swiper-slide">
-                        <div class="news__slide-img" title="<?php the_title();?>">
-                            <a href="<?php the_permalink();?>">
+                        <div class="news__slide-img">
+                            <a href="<?php the_permalink();?>" title="<?php the_title();?>">
                                 <?php the_post_thumbnail( 'news-image-prev' );;?>
                             </a>
                         </div>
