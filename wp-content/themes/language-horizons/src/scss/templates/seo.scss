@@ -64,6 +64,29 @@
     a{
       color: rgba(210, 145, 222, 1);
     }
+    h2, h3{
+      font-size: 24px;
+      color: #181717;
+      margin-bottom: 0.5em;
+      font-weight: 700;
+      line-height: normal;
+      text-align: left;
+      @media all and (max-width: 1920px){
+        font-size: px(24);
+      }
+      @media all and (max-width: 1600px){
+        font-size: px(22);
+      }
+      @media all and (max-width: 1440px){
+        font-size: px(20);
+      }
+      @media all and (max-width: 1200px){
+        font-size: px(18);
+      }
+      @media all and (max-width: 768px){
+        font-size: px(16);
+      }
+    }
     p{
       &:last-child{
         margin-bottom: 0;

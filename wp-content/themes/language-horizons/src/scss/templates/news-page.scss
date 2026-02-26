@@ -173,4 +173,30 @@
       }
     }
   }
+  .pagination{
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    .next{
+      margin-left: 10px;
+    }
+    .prev{
+      margin-right: 10px;
+    }
+    .nav-links{
+      a, span{
+        text-decoration: none;
+        color: rgba(0,0,0,0.8);
+        margin: 0 5px;
+        &.current{
+          font-weight: 600;
+          color: rgba(0,0,0,1);
+
+        }
+      }
+    }
+  }
 }

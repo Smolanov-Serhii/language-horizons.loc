@@ -217,3 +217,41 @@ add_action( 'wp', function(){
 } );
 
 add_filter( 'excerpt_length', function( $length ) { return 20; } );
+
+
+//add_action('wpcf7_mail_sent', 'send_to_telegram');
+//function send_to_telegram($contact_form) {
+//    $form_id = $contact_form->posted_data['_wpcf7'];
+//    $submission = WPCF7_Submission::get_instance();
+//    if ($form_id == 5075044):
+//        if ($submission) {
+//            $data = $submission->get_posted_data();
+//            $files = $submission->uploaded_files();
+//
+//            $bot_token = '8192274759:AAEToW_cT0hggex7gFZGz6uvPkSgGMYpstM';
+//            $chat_id = '456867827';
+//
+//            // Отправка текстового сообщения
+//            $message = "Страница: " . $data['page-title'] . "\nЯзык: " . $data['language'] . "\nИмя: " . $data['client-name'] . "\nТелефон: " . $data['tel'] . "\nEmail: " . $data['email'];
+//            file_get_contents("https://api.telegram.org/bot$bot_token/sendMessage?chat_id=$chat_id&text=" . urlencode($message));
+//
+//            // Отправка файлов
+//            foreach ($files as $file) {
+//                if (file_exists($file)) {
+//                    $post_fields = [
+//                        'chat_id' => $chat_id,
+//                        'document' => new CURLFile(realpath($file))
+//                    ];
+//
+//                    $ch = curl_init("https://api.telegram.org/bot$bot_token/sendDocument");
+//                    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type:multipart/form-data"]);
+//                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//                    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
+//                    curl_exec($ch);
+//                    curl_close($ch);
+//                }
+//            }
+//        }
+//    endif;
+//
+//}
