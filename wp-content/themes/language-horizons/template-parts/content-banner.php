@@ -31,7 +31,7 @@ $post_id = get_the_ID();
             ?>
         </div>
         <div class="banner__img">
-            <img src="<?php echo the_field('kartinka_v_banner', $post_id) ?>" alt="<?php echo wp_strip_all_tags( get_field('zagolovok_v_baner', $post_id) ); ?>">
+            <img class="hero-banner-img no-autoptimize" src="<?php echo the_field('kartinka_v_banner', $post_id) ?>" alt="<?php echo wp_strip_all_tags( get_field('zagolovok_v_baner', $post_id) ); ?>">
         </div>
     </div>
 </section>

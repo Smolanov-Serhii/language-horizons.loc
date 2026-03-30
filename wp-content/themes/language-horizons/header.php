@@ -11,58 +11,8 @@
 $post_id = get_the_ID();
 ?>
 <!doctype html>
-<?php
-    $currentLang = qtranxf_getLanguage();
-    if ($currentLang == "ua"){
-        echo '<html lang="uk">';
-        echo '<meta http-equiv="content-language" content="uk">';
-    } else if ($currentLang == "ru"){
-        echo '<html lang="ru">';
-        echo '<meta http-equiv="content-language" content="ru">';
-    } else {
-        echo '<html lang="en">';
-        echo '<meta charset="' . bloginfo( 'charset' ) . '">';
-    }
-?>
+<html <?php language_attributes(); ?>>
 <head>
-    <?php
-    $currentLang = qtranxf_getLanguage();
-    if ($currentLang == "ua"){
-
-            if (is_front_page()){
-                ?>
-<!--                <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/" />-->
-<!--                <link rel="alternate" href="https://language-horizons.com/" hreflang="x-default" />-->
-                <?php
-            } else {
-                ?>
-<!--                <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
-<!--                <link rel="alternate" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--" hreflang="x-default" />-->
-                <?php
-            }
-        ?>
-        <?php
-    } else if ($currentLang == "ru"){
-
-        if (is_front_page()){
-            ?>
-<!--            <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/"/>-->
-<!--            <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/" />-->
-            <?php
-        } else {
-            ?>
-<!--            <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/--><?php //echo get_page_uri();?><!--"/>-->
-<!--            <link rel="alternate" hreflang="ru" href="https://language-horizons.com/ru/--><?php //echo get_page_uri();?><!--" />-->
-            <?php
-        }
-    } else {
-        ?>
-
-        <link rel="alternate" hreflang="x-default" href="https://language-horizons.com/<?php echo get_page_uri();?>"/>
-        <link rel="alternate" hreflang="en" href="https://language-horizons.com/en/<?php echo get_page_uri();?>" />
-        <?php
-    }
-    ?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="yandex-verification" content="629cbc3a24436817" />
     <link rel="preconnect" href="https://fonts.googleapis.com">

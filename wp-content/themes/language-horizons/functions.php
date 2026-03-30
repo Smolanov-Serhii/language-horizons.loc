@@ -219,39 +219,50 @@ add_action( 'wp', function(){
 add_filter( 'excerpt_length', function( $length ) { return 20; } );
 
 
-//add_action('wpcf7_mail_sent', 'send_to_telegram');
-//function send_to_telegram($contact_form) {
-//    $form_id = $contact_form->posted_data['_wpcf7'];
-//    $submission = WPCF7_Submission::get_instance();
-//    if ($form_id == 5075044):
-//        if ($submission) {
-//            $data = $submission->get_posted_data();
-//            $files = $submission->uploaded_files();
-//
-//            $bot_token = '8192274759:AAEToW_cT0hggex7gFZGz6uvPkSgGMYpstM';
-//            $chat_id = '456867827';
-//
-//            // Отправка текстового сообщения
-//            $message = "Страница: " . $data['page-title'] . "\nЯзык: " . $data['language'] . "\nИмя: " . $data['client-name'] . "\nТелефон: " . $data['tel'] . "\nEmail: " . $data['email'];
-//            file_get_contents("https://api.telegram.org/bot$bot_token/sendMessage?chat_id=$chat_id&text=" . urlencode($message));
-//
-//            // Отправка файлов
-//            foreach ($files as $file) {
-//                if (file_exists($file)) {
-//                    $post_fields = [
-//                        'chat_id' => $chat_id,
-//                        'document' => new CURLFile(realpath($file))
-//                    ];
-//
-//                    $ch = curl_init("https://api.telegram.org/bot$bot_token/sendDocument");
-//                    curl_setopt($ch, CURLOPT_HTTPHEADER, ["Content-Type:multipart/form-data"]);
-//                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-//                    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_fields);
-//                    curl_exec($ch);
-//                    curl_close($ch);
-//                }
-//            }
-//        }
-//    endif;
-//
-//}
+add_action('init', function () {
+    remove_action('wp_head', 'rel_canonical');
+
+    add_action('wp_head', function () {
+        if (
+            !function_exists('qtranxf_getLanguage') ||
+            !function_exists('qtranxf_getSortedLanguages') ||
+            !function_exists('qtranxf_convertURL')
+        ) {
+            return;
+        }
+
+        global $wp;
+
+        $languages = qtranxf_getSortedLanguages();
+        $current_lang = qtranxf_getLanguage();
+
+        $request = isset($wp->request) ? trim($wp->request, '/') : '';
+
+        $base_current_url = trailingslashit(get_option('home'));
+        if ($request !== '') {
+            $base_current_url .= trailingslashit($request);
+        }
+
+        if (is_front_page()) {
+            $base_current_url = trailingslashit(get_option('home'));
+        }
+
+        $canonical_url = qtranxf_convertURL($base_current_url, $current_lang, false, true);
+        echo '<link rel="canonical" href="' . esc_url(trailingslashit($canonical_url)) . '" />' . "\n";
+
+        foreach ($languages as $lang) {
+            $hreflang = ($lang === 'ua') ? 'uk' : $lang;
+            $alternate_url = qtranxf_convertURL($base_current_url, $lang, false, true);
+
+            echo '<link rel="alternate" hreflang="' . esc_attr($hreflang) . '" href="' . esc_url(trailingslashit($alternate_url)) . '" />' . "\n";
+        }
+
+        // x-default всегда без языкового префикса
+        $x_default_url = trailingslashit(get_option('home'));
+        if (!is_front_page() && $request !== '') {
+            $x_default_url .= trailingslashit($request);
+        }
+
+        echo '<link rel="alternate" hreflang="x-default" href="' . esc_url($x_default_url) . '" />' . "\n";
+    }, 1);
+});
