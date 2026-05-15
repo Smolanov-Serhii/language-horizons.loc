@@ -177,25 +177,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 function add_qts_sitemaps_to_robots( $output, $public ) {
-    global $wp_sitemaps, $q_config;
-    // bail early if either $wp_sitemaps or $q_config are not set, or the site is not public
-    if( !isset($wp_sitemaps) || !isset($q_config) || !$public ) return $output;
-    // get the default sitemap.xml url
-    $index_url = $wp_sitemaps->index->get_index_url();
-    // get all languages
-    $languages = qtranxf_getSortedLanguages();
-    // get default language
-    $default_language = qtranxf_getLanguageDefault();
-    foreach( $languages as $lang ) {
-        // bail early if the current language is the default, since this is
-        // being taken care of by WordPress core
-        if( $lang === $default_language ) continue;
-        $output .= "\nSitemap: " . esc_url( qtranxf_convertUrl($index_url, $lang) ) . "\n";
+    if (!$public) {
+        return $output;
     }
 
-    return $output;
+    $output = preg_replace('/^Sitemap:.*$/mi', '', $output);
+    $output = trim($output);
+
+    return $output . "\n\nSitemap: " . esc_url(home_url('/sitemap.xml')) . "\n";
 }
-add_filter( 'robots_txt', 'add_qts_sitemaps_to_robots', 2, 2 );
+add_filter( 'robots_txt', 'add_qts_sitemaps_to_robots', 99, 2 );
 
 
 //add_filter( 'use_block_editor_for_post_type', function( $use, $post_type ){
@@ -221,10 +212,12 @@ add_filter( 'excerpt_length', function( $length ) { return 20; } );
 
 add_action('init', function () {
     remove_action('wp_head', 'rel_canonical');
+    add_filter('wpseo_canonical', '__return_false');
 
     add_action('wp_head', function () {
         if (
             !function_exists('qtranxf_getLanguage') ||
+            !function_exists('qtranxf_getLanguageDefault') ||
             !function_exists('qtranxf_getSortedLanguages') ||
             !function_exists('qtranxf_convertURL')
         ) {
@@ -235,8 +228,14 @@ add_action('init', function () {
 
         $languages = qtranxf_getSortedLanguages();
         $current_lang = qtranxf_getLanguage();
+        $default_language = qtranxf_getLanguageDefault();
 
         $request = isset($wp->request) ? trim($wp->request, '/') : '';
+        $request_parts = ($request !== '') ? explode('/', $request) : array();
+        if (!empty($request_parts) && in_array($request_parts[0], $languages, true)) {
+            array_shift($request_parts);
+            $request = implode('/', $request_parts);
+        }
 
         $base_current_url = trailingslashit(get_option('home'));
         if ($request !== '') {
@@ -247,12 +246,17 @@ add_action('init', function () {
             $base_current_url = trailingslashit(get_option('home'));
         }
 
-        $canonical_url = qtranxf_convertURL($base_current_url, $current_lang, false, true);
+        $canonical_url = ($current_lang === $default_language && is_front_page())
+            ? trailingslashit(get_option('home'))
+            : qtranxf_convertURL($base_current_url, $current_lang, false, true);
+
         echo '<link rel="canonical" href="' . esc_url(trailingslashit($canonical_url)) . '" />' . "\n";
 
         foreach ($languages as $lang) {
             $hreflang = ($lang === 'ua') ? 'uk' : $lang;
-            $alternate_url = qtranxf_convertURL($base_current_url, $lang, false, true);
+            $alternate_url = ($lang === $default_language && is_front_page())
+                ? trailingslashit(get_option('home'))
+                : qtranxf_convertURL($base_current_url, $lang, false, true);
 
             echo '<link rel="alternate" hreflang="' . esc_attr($hreflang) . '" href="' . esc_url(trailingslashit($alternate_url)) . '" />' . "\n";
         }
